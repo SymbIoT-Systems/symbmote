@@ -56,7 +56,7 @@ interface UartByte {
    *			UartByte.send() would not block if called.
    *	     FALSE	TX pipeline is full, UartByte.send() would block.
    */
-  async command bool    sendAvail();
+  //async command bool    sendAvail();
 
   /**
    * Receive a single uart byte. The call blocks until a byte is
@@ -76,5 +76,5 @@ interface UartByte {
    *	     FALSE	RX pipeline is empty, UartByte.receive() would block
    *			waiting for a byte and/or the timeout.
    */
-  async command bool    receiveAvail();
+ // async command bool    receiveAvail();
 }
