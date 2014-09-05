@@ -60,6 +60,6 @@ program_no_e: program_bl FORCE
 	$(MSP_BSL) $(MSP_BSL_FLAGS) -c $(BSL) -r -I -p $(INSTALL_IHEX)
 	rm -f $(subst .ihex.,.exe.,$(INSTALL_IHEX)) $(INSTALL_IHEX)
 
-program_bl: setid bsltest check_tosboot FORCE
+program_bl: setid bsltest FORCE #check_tosboot
 	@echo -e '$(INFO_STRING) installing $(TARGET) bootloader using bsl'
 	$(MSP_BSL) $(MSP_BSL_FLAGS) -c $(BSL) -r -e -I -p $(BOOTLOADER_IMG)
