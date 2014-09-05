@@ -1,4 +1,5 @@
 /*
+ * Copyright (c) 2014 Laksh Bhatia
  * Copyright (c) 2013 Eric B. Decker
  * Copyright (c) 2009-2010 People Power Co.
  * All rights reserved.
@@ -41,6 +42,7 @@
  *
  * @author Peter A. Bigot <pab@peoplepowerco.com>
  * @author Eric B. Decker <cire831@gmail.com>
+ * @author Laksh Bhatia
  */
 
 configuration PlatformUsciMapC {

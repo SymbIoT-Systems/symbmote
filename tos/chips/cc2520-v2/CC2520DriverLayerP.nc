@@ -743,7 +743,7 @@ module CC2520DriverLayerP {
     interface GeneralIO      as TXA;             /* gp1 -> tx_active  */
     interface GeneralIO      as EXCA;            /* gp2 -> exca  */
 
-    interface GenericCapture<uint16_t>
+    interface GpioCapture
                              as SfdCapture;
     interface GpioInterrupt  as ExcAInterrupt;
 
@@ -2428,7 +2428,7 @@ implementation {
 
   bool in_sfdcapture_captured;
 
-  async event void SfdCapture.captured(uint16_t cap_time, bool overwritten)  {
+  async event void SfdCapture.captured(uint16_t cap_time)  {
     sfd_stamp_t         *sfd_p;
     uint8_t              sfd_up;
     uint32_t             local;

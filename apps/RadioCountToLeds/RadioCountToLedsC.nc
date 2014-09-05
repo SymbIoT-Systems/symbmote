@@ -63,6 +63,7 @@ module RadioCountToLedsC @safe() {
     interface Timer<TMilli> as MilliTimer;
     interface SplitControl as AMControl;
     interface Packet;
+    interface UartByte;
   }
 }
 implementation {
@@ -140,6 +141,7 @@ implementation {
   event void AMSend.sendDone(message_t* bufPtr, error_t error) {
     if (&packet == bufPtr) {
       locked = FALSE;
+      call UartByte.send('a');
     }
   }
 

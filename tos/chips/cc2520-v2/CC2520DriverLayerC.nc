@@ -128,7 +128,7 @@ implementation {
   DriverLayerP.SpiByte     -> HplChip;
 
   DriverLayerP.ExcAInterrupt -> HplChip.ExcAInterrupt;
-  DriverLayerP.SfdCapture    -> HplChip;
+  DriverLayerP.SfdCapture    -> HplChip.SfdCapture;
 
   DriverLayerP.Tasklet -> TaskletC;
 
