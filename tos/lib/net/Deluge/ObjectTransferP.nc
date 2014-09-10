@@ -161,7 +161,7 @@ implementation
   }
   
   void pingremotel(uint8_t node_id,uint8_t req){
-          DelugeDoneMsg *trfMsg = (DelugeDoneMsg*)(call SendDoneMsg.getPayload(&trfMsgBuf, sizeof(DelugeDoneMsg)));
+      DelugeDoneMsg *trfMsg = (DelugeDoneMsg*)(call SendDoneMsg.getPayload(&trfMsgBuf, sizeof(DelugeDoneMsg)));
       
 
       if (trfMsg == NULL) {
@@ -172,12 +172,11 @@ implementation
       trfMsg->imgNum = 0;
       
       if (call SendDoneMsg.send(node_id, &trfMsgBuf, sizeof(DelugeDoneMsg)) == SUCCESS) {
-
+        
       }
   }
 
   command error_t ObjectTransfer.pingremote(uint8_t node_id){
-    call Leds.led2Toggle();
     pingremotel(node_id,10);
   }
 
@@ -298,7 +297,6 @@ implementation
       }
 
       post signalObjRecvDone();
-      call Leds.led2Toggle();
     }
   }
   
@@ -387,7 +385,6 @@ implementation
 
   task void pingreplyfunc(){
     signal ObjectTransfer.pingreply(nodeid);
-    call Leds.led0Toggle();
   }
 
   event message_t* ReceiveDoneMsg.receive(message_t* msg, void* payload, uint8_t len){
@@ -402,6 +399,7 @@ implementation
       //Basestation received reply for completing the transfer...stop transfer now
       post pingreplyfunc();
     }
+    return msg;
   }
 
   event void SendDoneMsg.sendDone(message_t* msg, error_t error){
