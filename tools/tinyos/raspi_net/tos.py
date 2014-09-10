@@ -433,7 +433,8 @@ class AM(SimpleAM):
     def __init__(self, s=None, oobHook=None):
         if s == None:
             try:
-                s = getSource(sys.argv[1])
+                print motepath
+                s = getSource(motepath)
             except:
                 try:
                     for (i, j) in zip(sys.argv[1::2], sys.argv[2::2]):

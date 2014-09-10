@@ -9,18 +9,30 @@ Functions to be provided:
 
 '''
 
-import tosdeluge
+
+from tosdeluge import *
+import sys
 
 print "Usage: python deluge1.py <command> <parameters>\n"
+#eg. python deluge1.py flash serial@/dev/ttyUSB0 -ls -s -i 1 build/telosb/tinyos_main.xml -dr 1
+#eg. python deluge1.py flash 1 build/telosb/tos_image.xml 
+
+motepath = "serial@/dev/ttyUSB0"
+
+
 # print "<command> can be :"
 if (sys.argv[1] == "flash"):
-	if (localstop):
-		if(stop):
-			print "Command sent"
+	slot = int(sys.arv[2])
+	filename = sys.argv[3]
+
+	if localstop():
+		if stop ():
+			if inject (slot,filename):
+				print "Command sent"
 	else:
 		print "Error"
 
-if __name__ == "__main__":
-    print "Using as a file"
+# if __name__ == "__main__":
+#     print "Using as a file"
 
 

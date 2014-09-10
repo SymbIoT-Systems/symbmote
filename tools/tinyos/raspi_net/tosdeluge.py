@@ -473,11 +473,9 @@ if len(sys.argv) >= 3:
     else:
         print_usage()
 
-# else:
-#     print_usage()
 
 if __name__ == "__main__":
     print "Using as a file"
     
-sys.exit()
+
 
