@@ -58,6 +58,10 @@ module ObjectTransferP
     
     interface Leds;
 //  interface StatsCollector;
+
+    interface AMSend as SendDoneMsg;
+    interface Receive as ReceiveDoneMsg;
+
   }
 }
 
@@ -81,6 +85,7 @@ implementation
   uint8_t cont_receive_img_num;
   
   message_t pMsgBuf;
+  message_t trfMsgBuf;
   bool isBusy_pMsgBuf = FALSE;
   DelugeObjDesc curObjDesc;
   
@@ -153,6 +158,27 @@ implementation
     }
   }
   
+  void pingremotel(uint8_t node_id,uint8_t req){
+          DelugeDoneMsg *trfMsg = (DelugeDoneMsg*)(call SendDoneMsg.getPayload(&trfMsgBuf, sizeof(DelugeDoneMsg)));
+      
+
+      if (trfMsg == NULL) {
+        return;
+      }
+      trfMsg->sourceAddr = TOS_NODE_ID;
+      trfMsg->request = req;
+      trfMsg->imgNum = 0;
+      
+      if (call SendDoneMsg.send(node_id, &trfMsgBuf, sizeof(DelugeDoneMsg)) == SUCCESS) {
+
+      }
+  }
+
+  command error_t ObjectTransfer.pingremote(uint8_t node_id){
+
+    pingremotel(node_id,10);
+  }
+
   /**
    * Starts publisher
    */
@@ -255,7 +281,22 @@ implementation
   event void BlockWrite.syncDone[uint8_t img_num](error_t error)
   {
     if (state == S_SYNC) {
+      DelugeDoneMsg *trfMsg = (DelugeDoneMsg*)(call SendDoneMsg.getPayload(&trfMsgBuf, sizeof(DelugeDoneMsg)));
+      
+
+      if (trfMsg == NULL) {
+        return;
+      }
+      trfMsg->sourceAddr = TOS_NODE_ID;
+      trfMsg->request = 0;
+      trfMsg->imgNum = img_num;
+      
+      if (call SendDoneMsg.send(AM_BROADCAST_ADDR, &trfMsgBuf, sizeof(DelugeDoneMsg)) == SUCCESS) {
+
+      }
+
       post signalObjRecvDone();
+      call Leds.led2Toggle();
     }
   }
   
@@ -340,5 +381,22 @@ implementation
     if (state == S_ERASE) {
       cont_receive();
     }
+  }
+
+  event message_t* ReceiveDoneMsg.receive(message_t* msg, void* payload, uint8_t len){
+    DelugeDoneMsg *trfMsg = (DelugeDoneMsg*)payload;
+    if(trfMsg->request==10){
+      pingremotel(1,11);
+    }else if(trfMsg->request==11){
+      //send to print for ping reply
+      signal ObjectTransfer.pingreply(trfMsg->sourceAddr);
+    }else if(trfMsg->request==0){
+      //Basestation received reply for completing the transfer...stop transfer now
+      signal ObjectTransfer.pingreply(trfMsg->sourceAddr);
+    }
+  }
+
+  event void SendDoneMsg.sendDone(message_t* msg, error_t error){
+
   }
 }

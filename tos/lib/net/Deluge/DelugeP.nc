@@ -194,4 +194,5 @@ implementation
   event void DelugeVolumeManager.eraseDone(uint8_t imgNum) {}
   event void RadioSplitControl.stopDone(error_t error) {}
   default async void command Leds.set(uint8_t val) {}
+  event void ObjectTransfer.pingreply(uint8_t node_id){}
 }

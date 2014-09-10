@@ -41,6 +41,7 @@ interface ObjectTransfer
   command error_t publish(object_id_t new_objid, object_size_t new_size, uint8_t img_num);
   command error_t receive(object_id_t new_objid, object_size_t new_size, uint8_t img_num);
   event void receiveDone(error_t error);
-
+  command error_t pingremote(uint8_t node_id);
+  event void pingreply(uint8_t node_id);
   command error_t stop();
 }

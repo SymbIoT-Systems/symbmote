@@ -121,7 +121,6 @@ implementation {
       bootArgs.address = TOS_NODE_ID;
 
       call IFlash.write(TCAST(uint8_t* COUNT(sizeof(bootArgs)),TOSBOOT_ARGS_ADDR), &bootArgs, sizeof(bootArgs));
-
       // reboot
       netprog_reboot();
     }

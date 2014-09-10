@@ -82,9 +82,11 @@ implementation
   event message_t* SerialAMReceiver.receive(message_t* msg, void* payload, uint8_t len)
   {
     SerialReqPacket *request = (SerialReqPacket *)payload;
+    uint8_t node_id=request->imgNum;
     memset(&delugeCmd, 0, sizeof(DelugeCmd));
     call stop();
     delugeCmd.type = request->cmd;
+
     // Converts the image number that the user wants to the real image number
     request->imgNum = imgNum2volumeId(request->imgNum);
 
@@ -115,6 +117,10 @@ implementation
       call DelayTimer.startOneShot(1024);
       sendReply(SUCCESS);
       break;
+    case DELUGE_CMD_PINGREMOTE:
+      call ObjectTransfer.pingremote(node_id);
+      sendReply(SUCCESS);
+      break;
     }
     return msg;
   }
@@ -142,7 +148,7 @@ implementation
     case DELUGE_CMD_ONLY_DISSEMINATE:
     case DELUGE_CMD_DISSEMINATE_AND_REPROGRAM:
       delugeCmd.uidhash = ident->uidhash;
-      delugeCmd.size = ident->size;
+      delugeCmd.size = ident->size;      
       call DisseminationUpdate.change(&delugeCmd);
       call ObjectTransfer.publish(delugeCmd.uidhash, delugeCmd.size, delugeCmd.imgNum);
       break;
@@ -151,6 +157,9 @@ implementation
 
   event void Resource.granted() {}
   event void ObjectTransfer.receiveDone(error_t error) {}
+  event void ObjectTransfer.pingreply(uint8_t node_id){
+    call Leds.led0Toggle();
+  }
   event void SerialAMSender.sendDone(message_t* msg, error_t error) {}
   event void DelugeVolumeManager.eraseDone(uint8_t imgNum) {}
 }
