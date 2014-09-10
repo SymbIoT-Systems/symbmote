@@ -157,9 +157,7 @@ implementation
 
   event void Resource.granted() {}
   event void ObjectTransfer.receiveDone(error_t error) {}
-  event void ObjectTransfer.pingreply(uint8_t node_id){
-    call Leds.led0Toggle();
-  }
+  event void ObjectTransfer.pingreply(uint8_t node_id){}
   event void SerialAMSender.sendDone(message_t* msg, error_t error) {}
   event void DelugeVolumeManager.eraseDone(uint8_t imgNum) {}
 }

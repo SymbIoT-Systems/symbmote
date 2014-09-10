@@ -88,7 +88,9 @@ implementation
   message_t trfMsgBuf;
   bool isBusy_pMsgBuf = FALSE;
   DelugeObjDesc curObjDesc;
-  
+  uint8_t nodeid=1;
+
+
   void updateTimers()
   {
     //advTimers.timer = 0;
@@ -175,7 +177,7 @@ implementation
   }
 
   command error_t ObjectTransfer.pingremote(uint8_t node_id){
-
+    call Leds.led2Toggle();
     pingremotel(node_id,10);
   }
 
@@ -383,16 +385,22 @@ implementation
     }
   }
 
+  task void pingreplyfunc(){
+    signal ObjectTransfer.pingreply(nodeid);
+    call Leds.led0Toggle();
+  }
+
   event message_t* ReceiveDoneMsg.receive(message_t* msg, void* payload, uint8_t len){
     DelugeDoneMsg *trfMsg = (DelugeDoneMsg*)payload;
+    nodeid=trfMsg->sourceAddr;
     if(trfMsg->request==10){
       pingremotel(1,11);
     }else if(trfMsg->request==11){
       //send to print for ping reply
-      signal ObjectTransfer.pingreply(trfMsg->sourceAddr);
+      post pingreplyfunc();
     }else if(trfMsg->request==0){
       //Basestation received reply for completing the transfer...stop transfer now
-      signal ObjectTransfer.pingreply(trfMsg->sourceAddr);
+      post pingreplyfunc();
     }
   }
 
