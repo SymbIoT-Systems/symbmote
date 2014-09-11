@@ -14,7 +14,8 @@ dist_man_MANS = tos-check-env.1 	\
                 tos-storage-pxa27xp30.1	\
                 tos-write-image.1	\
                 tos-build-deluge-image.1 \
-                tos-deluge.1
+                tos-deluge.1 \
+                sym-deluge.1
 
 
 bin_SCRIPTS = tos-ident-flags \
@@ -35,6 +36,7 @@ bin_SCRIPTS = tos-ident-flags \
               tos-dump.py \
               tos-nwprog \
               tos-serlook.py \
-              tos-sub-tosdir
+              tos-sub-tosdir \
+              sym-deluge
 
 bin_PROGRAMS = tos-serial-debug
