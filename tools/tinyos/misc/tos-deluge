@@ -145,7 +145,6 @@ def handleResponse(success, msg):
             print "No response"
             return False
         reply = SerialReplyPacket(packet.data)
-        print reply.data
         if reply.error == ERROR_SUCCESS:
             return True
         else:
@@ -469,15 +468,12 @@ if len(sys.argv) >= 3:
             print "Command sent"
     elif sys.argv[2] in ["-pr","--pingremote"]:
         if pingremote(int(sys.argv[3])):
-            print "Command sent"
+            print "Command sent"    
     else:
         print_usage()
 
 else:
     print_usage()
 
-if __name__ == "__main__":
-    print "Using as a file"
-    
 sys.exit()
 

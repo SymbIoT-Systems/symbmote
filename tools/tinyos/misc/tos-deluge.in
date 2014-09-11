@@ -61,6 +61,7 @@ DM_CMD_ONLY_DISSEMINATE = 3
 DM_CMD_DISSEMINATE_AND_REPROGRAM = 4
 DM_CMD_REPROGRAM        = 5
 DM_CMD_BOOT             = 6
+DM_CMD_PINGREMOTE       = 7
 
 ERROR_SUCCESS = 0   # T2-compatible
 ERROR_FAIL    = 1   # T2-compatible
@@ -385,6 +386,11 @@ def localstop():
     success = am.write(sreqpkt, DM_AMID)
     return handleResponse(success, "ERROR: Unable to initiate the local stop")
 
+def pingremote(node_id):
+    sreqpkt = DMReqPacket((DM_CMD_PINGREMOTE, node_id))
+    success = am.write(sreqpkt, DM_AMID)
+    return handleResponse(success, "ERROR: Unable to initiate remote ping")
+
 def print_usage():
     print "Usage: %s <source> <-p|-i|-r|-d|-e|-s> image_number [options]" % sys.argv[0]
     print "  <source> can be:"
@@ -400,6 +406,7 @@ def print_usage():
     print "  -dr --disseminate-and-reprogram"
     print "  -s --stop        Stop the dissemination "
     print "  -ls --local-stop Stop the dissemination only on the local mote"
+    print "  -pr --pingremote Ping a remote node to see if the mote is alive"
 
 #     print "  -b --reprogram_bs\n     Reprogram only the directly-connected mote"
 #     print "  -s --reset\n     Reset the versioning information for a given image"
@@ -459,6 +466,9 @@ if len(sys.argv) >= 3:
     elif sys.argv[2] in ["-ls", "--local-stop"]:
         if localstop():
             print "Command sent"
+    elif sys.argv[2] in ["-pr","--pingremote"]:
+        if pingremote(int(sys.argv[3])):
+            print "Command sent"    
     else:
         print_usage()
 
