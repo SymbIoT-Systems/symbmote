@@ -28,3 +28,6 @@ _TOSSIM.dll
 # Ignore application byproducts
 apps/BaseStation15.4/seriallisten15-4
 
+#Ignore trial scripts
+/tools/tinyos/raspi_net/deluge1.py
+/tools/tinyos/raspi_net/deluge2.py

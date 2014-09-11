@@ -12,17 +12,19 @@ Functions to be provided:
 
 from tosdeluge import *
 import sys
+import os
+
+
+os.environ['MOTECOM'] = 'serial@/dev/ttyUSB0'
 
 print "Usage: python deluge1.py <command> <parameters>\n"
 #eg. python deluge1.py flash serial@/dev/ttyUSB0 -ls -s -i 1 build/telosb/tinyos_main.xml -dr 1
 #eg. python deluge1.py flash 1 build/telosb/tos_image.xml 
 
-motepath = "serial@/dev/ttyUSB0"
-
 
 # print "<command> can be :"
 if (sys.argv[1] == "flash"):
-	slot = int(sys.arv[2])
+	slot = int(sys.argv[2])
 	filename = sys.argv[3]
 
 	if localstop():
