@@ -407,6 +407,7 @@ def print_usage():
     print "  -s --stop        Stop the dissemination "
     print "  -ls --local-stop Stop the dissemination only on the local mote"
     print "  -pr --pingremote Ping a remote node to see if the mote is alive"
+    print "  -l  --listen     Listen to output of Sniffer"
 
 #     print "  -b --reprogram_bs\n     Reprogram only the directly-connected mote"
 #     print "  -s --reset\n     Reset the versioning information for a given image"
@@ -420,6 +421,10 @@ def checkImgNum():
         print "ERROR: Image number is not valid"
         sys.exit(-1)
     return imgNum
+
+def listen():
+    p=am.read()
+    return p
 
 # ======== MAIN ======== #
 if len(sys.argv) >= 3:
@@ -468,7 +473,15 @@ if len(sys.argv) >= 3:
             print "Command sent"
     elif sys.argv[2] in ["-pr","--pingremote"]:
         if pingremote(int(sys.argv[3])):
-            print "Command sent"    
+            print "Command sent"
+    elif sys.argv[2] in ["-l","--listen"]:
+        try:
+            while True:
+                data=listen()
+                print data
+        except KeyboardInterrupt:
+            print "\nExiting"
+            sys.exit(0)    
     else:
         print_usage()
 

@@ -89,8 +89,10 @@ if len(sys.argv) >= 2:
 			slot = sys.argv[2]
 			os.system(basecommand + " -dr " + slot)
 		else:
-			#print "Enter slot number\n"
 			usage()
+			
+	elif sys.argv[1]=="listen":
+		os.system(basecommand + " -l")
 
 	else:
 		usage()
