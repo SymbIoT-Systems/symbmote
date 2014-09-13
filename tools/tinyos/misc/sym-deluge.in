@@ -57,7 +57,7 @@ def usage():
 	print "flash <slot number> <image.xml file path>"
 	print "ping <remote node id>"
 	print "switch <slot number>"
-
+	print "listen"
 
 if len(sys.argv) >= 2:
 
