@@ -234,9 +234,13 @@ message_t serialMsg;
   event message_t* SerialReceive.receive(message_t *msg, void *payload, uint8_t len) {
     serialradiopacket* message=(serialradiopacket*)payload;
     if(message->radiostate==1){
-    call RadioControl.start();
+    //call RadioControl.start();
+    uartBusy=TRUE;
+
   }else if(message->radiostate==0){
-    call RadioControl.stop();
+    //call RadioControl.stop();
+    uartBusy=FALSE;
+
   }
   sendReply(SUCCESS,0);
   return msg;

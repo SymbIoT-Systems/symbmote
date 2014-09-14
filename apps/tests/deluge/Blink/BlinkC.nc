@@ -67,7 +67,7 @@ implementation
   {
     dbg("BlinkC", "Timer 0 fired @ %s.\n", sim_time_string());
 #ifndef BLINK_REVERSE
-    call Leds.led0Toggle();
+    call Leds.led2Toggle();
 #else
     call Leds.led2Toggle();
 #endif
