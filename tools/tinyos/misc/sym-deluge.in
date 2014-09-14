@@ -43,12 +43,13 @@ Functions to be provided:
 3.Pinging to see if a remote node is alive using -pr
 4.Switch the edgerouter to/from sniffer mode using -sr 
 
+REMEMBER: Always recompile before using flash command! tos-deluge works based on new UID for tos_image.xml
 '''
 
 
 import os
 import sys
-
+from time import sleep
 
 motepath = "serial@/dev/ttyUSB0:115200"
 basecommand = "tos-deluge " + motepath
@@ -74,22 +75,32 @@ if len(sys.argv) >= 2:
 			slot = sys.argv[2]
 			filename = sys.argv[3]
 
+			print "Calling localstop\n"
+			os.system(basecommand + " -ls")
+
+			sleep(2)
+
+			print "Calling stop\n"
+			os.system(basecommand + " -s")
+
+			sleep(2)
+			
 			print "Calling stopradio\n" #Stopping radio while flashing/injecting new image
 			os.system(basecommand + " -sr" + " 0")
-
-			print "Calling localstop\n"
-			os.system(basecommand + " -ls") 
-			print "Calling stop\n"
-			os.system(basecommand + " -s")  
+			sleep(2)
 			print "Injecting into Basestation\n"
 			os.system(basecommand + " -i " + slot + " " + filename)
 
-			print "Restarting Radio\n" #Restart radio
-			os.system(basecommand + " -sr" + " 1")
+			sleep(2)
 
 			print "Flashing remote nodes\n"
 			os.system(basecommand + " -dr " + slot)
 
+			sleep(10)
+			
+			print "Restarting Radio\n" #Restart radio
+			os.system(basecommand + " -sr" + " 1")
+			sleep(2)
 		else:
 			usage()
 
