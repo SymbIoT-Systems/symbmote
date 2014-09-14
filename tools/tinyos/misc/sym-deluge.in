@@ -32,6 +32,7 @@
 
 # @author Mayank Joneja <mayank@symbiotsystems.com>
 # @author Laksh Bhatia <laksh@symbiotsystems.com>
+# @date September 2014
 
 '''
 Script to offer simpler user functionality for overall testbed usage by calling tos-deluge functions in the background
@@ -40,7 +41,7 @@ Functions to be provided:
 1.Code inject and flash i.e. call -ls and -s followed by -i and -dr [slot number]
 2.Code switching on all devices using -dr 
 3.Pinging to see if a remote node is alive using -pr
-4.Switch the edgerouter to sniffer mode
+4.Switch the edgerouter to/from sniffer mode using -sr 
 
 '''
 
@@ -73,14 +74,22 @@ if len(sys.argv) >= 2:
 			slot = sys.argv[2]
 			filename = sys.argv[3]
 
+			print "Calling stopradio\n" #Stopping radio while flashing/injecting new image
+			os.system(basecommand + " -sr" + " 0")
+
 			print "Calling localstop\n"
 			os.system(basecommand + " -ls") 
 			print "Calling stop\n"
 			os.system(basecommand + " -s")  
 			print "Injecting into Basestation\n"
 			os.system(basecommand + " -i " + slot + " " + filename)
+
+			print "Restarting Radio\n" #Restart radio
+			os.system(basecommand + " -sr" + " 1")
+
 			print "Flashing remote nodes\n"
 			os.system(basecommand + " -dr " + slot)
+
 		else:
 			usage()
 
@@ -99,4 +108,3 @@ if len(sys.argv) >= 2:
 
 else:
 	usage()
-	

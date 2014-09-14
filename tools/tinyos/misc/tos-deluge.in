@@ -33,6 +33,9 @@
 
 # @author Razvan Musaloiu-E. <razvanm@cs.jhu.edu>
 # @author Chieh-Jan Mike Liang <cliang4@cs.jhu.edu>
+# @author Mayank Joneja <mayank@symbiotsystems.com> 
+# @author Laksh Bhatia <laksh@symbiotsystems.com>
+# @date September 2014
 
 import sys, stat, struct, subprocess, time, os.path
 from tinyos import tos
@@ -422,6 +425,7 @@ def print_usage():
     print "  -ls --local-stop Stop the dissemination only on the local mote"
     print "  -pr --pingremote Ping a remote node to see if the mote is alive"
     print "  -l  --listen     Listen to output of Sniffer"
+    print "  -sr --stopradio  Tool to stop and start radio (0=stop, 1=start)"
 
 #     print "  -b --reprogram_bs\n     Reprogram only the directly-connected mote"
 #     print "  -s --reset\n     Reset the versioning information for a given image"
@@ -496,6 +500,7 @@ if len(sys.argv) >= 3:
         except KeyboardInterrupt:
             print "\nExiting"
             sys.exit(0)
+
     elif sys.argv[2] in ["-sr","--stopradio"]:
         if stopradio(int(sys.argv[3])):
             print "Command sent"
@@ -506,4 +511,3 @@ else:
     print_usage()
 
 sys.exit()
-
