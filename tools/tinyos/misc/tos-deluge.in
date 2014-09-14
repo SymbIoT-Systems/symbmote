@@ -1,5 +1,6 @@
 #!@pathpython@
 
+# Copyright (c) 2014 SymbIoT Systems.
 # Copyright (c) 2007 Johns Hopkins University.
 # All rights reserved.
 #
@@ -44,6 +45,7 @@ PATH_PY_BUILD_IMAGE  = os.path.join(os.path.dirname(sys.argv[0]), 'tos-build-del
 FM_AMID = 0x53
 DM_AMID = 0x54
 SERIAL_DATA_LENGTH = 28 - (1+1+4+2)  # See definition of FMReqPacket below
+SERIAL_AMID=2
 
 # Commands for FlashManager
 FM_CMD_ERASE     = 0
@@ -93,6 +95,13 @@ class SerialReplyPacket(tos.Packet):
        tos.Packet.__init__(self,
                            [('error', 'int',  1),
                             ('data',  'blob', None)],
+                           packet)
+
+class SerialRadioPacket(tos.Packet):
+   def __init__(self, packet = None):
+       tos.Packet.__init__(self,
+                           [('radiostate', 'int',1),
+                            ('radio', 'int',  1)],
                            packet)
 
 class Ident(tos.Packet):
@@ -391,6 +400,11 @@ def pingremote(node_id):
     success = am.write(sreqpkt, DM_AMID)
     return handleResponse(success, "ERROR: Unable to initiate remote ping")
 
+def stopradio(state):
+    sreqpkt = SerialRadioPacket((state,0))
+    success = am.write(sreqpkt, SERIAL_AMID)
+    return handleResponse(success, "ERROR: Unable to change radio state")    
+
 def print_usage():
     print "Usage: %s <source> <-p|-i|-r|-d|-e|-s> image_number [options]" % sys.argv[0]
     print "  <source> can be:"
@@ -481,7 +495,10 @@ if len(sys.argv) >= 3:
                 print data
         except KeyboardInterrupt:
             print "\nExiting"
-            sys.exit(0)    
+            sys.exit(0)
+    elif sys.argv[2] in ["-sr","--stopradio"]:
+        if stopradio(int(sys.argv[3])):
+            print "Command sent"
     else:
         print_usage()
 
