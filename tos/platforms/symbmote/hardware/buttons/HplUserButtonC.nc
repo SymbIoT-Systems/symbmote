@@ -37,11 +37,12 @@
 /**
  * Implementation of the user button for the symbmote platforms.
  *
- * We use S2 for the user button which is connected to P2.7.
+ * We use S1 for the user button which is connected to P10.6
  *
  * @author Gilman Tolle <gtolle@archrock.com>
  * @author Peter A. Bigot <pab@peoplepowerco.com>
  * @author Eric B. Decker <cire831@gmail.com>
+ * @author Laksh Bhatia <laksh@symbiotsystems.com>
  */
 
 configuration HplUserButtonC {
@@ -52,9 +53,9 @@ implementation {
   components HplMsp430GeneralIOC as GeneralIOC;
   components HplMsp430InterruptC as InterruptC;
 
-  HplMsp430GeneralIO = GeneralIOC.Port27;
+  HplMsp430GeneralIO = GeneralIOC.Port106;
 
   components new Msp430InterruptC() as InterruptUserButtonC;
-  InterruptUserButtonC.HplInterrupt -> InterruptC.Port27;
+  InterruptUserButtonC.HplInterrupt -> InterruptC.Port106;
   GpioInterrupt = InterruptUserButtonC.Interrupt;
 }

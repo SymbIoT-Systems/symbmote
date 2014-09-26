@@ -88,8 +88,8 @@
  *       .3	0pI   	           		      .3	0pI
  *       .4	0pI   	        		      .4	0pI
  *       .5	0pI   	        		      .5	0pI
- *       .6	0pI     user_1 (S1)		      .6	0pI
- *       .7	0pI   	user_2 (S2)		      .7	0pI
+ *       .6	0pI     				      .6	0pI
+ *       .7	0pI   					      .7	0pI
  *
  * port 3.0	1pO	cc_cs_n			port 7.0	0mI	xin   (32KiHZ)
  *       .1	0pI	cc_si   (b0simo)	      .1	0mO	xout
@@ -101,13 +101,24 @@
  *       .7	1pI				      .7	0pI
  *
  * port 4.0	0pI   	      			port 8.0	0pI
- *       .1	0pI   	                    	      .1	0pI	cc_g4 (fifo, EN)
- *       .2	0pI   	                    	      .2	0pI	cc_g5 (cc2520 input, fifop, PAEN)
- *       .3	0pI   	                    	      .3	0pI
- *       .4	0pI   	       			      .4	0pI
- *       .5	0pO   	led3 (unused)		      .5	0pI
+ *       .1	0pI   	                  .1	0pI	cc_g4 (fifo, EN)
+ *       .2	0pI   	                  .2	0pI	cc_g5 (cc2520 input, fifop, PAEN)
+ *       .3	0pI   	                  .3	0pI
+ *       .4	0pI   	       			  .4	0pI
+ *       .5	0pO   				      .5	0pI
  *       .6	0pI   				      .6	0pI
  *       .7	0pI   				      .7	0pI
+ *									port 9.0 
+ *
+ *									port 10.0
+ *											.1
+ *											.2
+ *											.3
+ *											.4
+ *											.5	userswitch 2
+ *											.6	userswitch 1
+ *
+ *
  *
  */
 
@@ -128,8 +139,8 @@ enum {
 #endif /* PLATFORM_MSP430_HAS_XT1 */
 
 // LEDs
-TOSH_ASSIGN_PIN(RED_LED, 1, 0);
-TOSH_ASSIGN_PIN(GREEN_LED, 1, 1);
-TOSH_ASSIGN_PIN(YELLOW_LED, 4, 6);
+TOSH_ASSIGN_PIN(RED_LED, 4, 7);
+TOSH_ASSIGN_PIN(GREEN_LED, 5, 4);
+TOSH_ASSIGN_PIN(YELLOW_LED, 5, 5);
 
 #endif // _H_hardware_h
