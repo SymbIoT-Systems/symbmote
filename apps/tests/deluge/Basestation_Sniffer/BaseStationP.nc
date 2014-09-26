@@ -93,6 +93,7 @@ typedef nx_struct serialradiopacket {
   } SerialReplyPacket;
 
 message_t serialMsg;
+bool listenallowed=TRUE;
 
   void sendReply(error_t error,uint8_t node_id)
   {
@@ -156,13 +157,19 @@ message_t serialMsg;
   event message_t *RadioSnoop.receive[am_id_t id](message_t *msg,
 						    void *payload,
 						    uint8_t len) {
+    if(listenallowed)
     return receive(msg, payload, len);
+    else
+    return msg;
   }
   
   event message_t *RadioReceive.receive[am_id_t id](message_t *msg,
 						    void *payload,
 						    uint8_t len) {
+    if(listenallowed)
     return receive(msg, payload, len);
+    else
+    return msg;
   }
 
   message_t* receive(message_t *msg, void *payload, uint8_t len) {
@@ -231,16 +238,20 @@ message_t serialMsg;
 	  }
     post uartSendTask();
   }
+
   event message_t* SerialReceive.receive(message_t *msg, void *payload, uint8_t len) {
     serialradiopacket* message=(serialradiopacket*)payload;
+
     if(message->radiostate==1){
     //call RadioControl.start();
-    uartBusy=TRUE;
-
+    //uartBusy=TRUE;
+    //uartFull=TRUE;
+    listenallowed=TRUE;
   }else if(message->radiostate==0){
     //call RadioControl.stop();
-    uartBusy=FALSE;
-
+    //uartBusy=FALSE;
+    //uartFull=FALSE;
+    listenallowed=FALSE;
   }
   sendReply(SUCCESS,0);
   return msg;
