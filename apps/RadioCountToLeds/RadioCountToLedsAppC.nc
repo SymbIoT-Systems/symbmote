@@ -60,7 +60,6 @@ implementation {
   //components new AMReceiverC(AM_RADIO_COUNT_MSG);
   components new TimerMilliC();
   components SerialActiveMessageC as AM;
-  components PlatformSerialC;
   
   App.Boot -> MainC.Boot;
   
@@ -70,8 +69,6 @@ implementation {
   App.Leds -> LedsC;
   App.MilliTimer -> TimerMilliC;
   App.Packet -> AM.Packet;
-
-  App.UartByte-> PlatformSerialC.UartByte1;
 }
 
 

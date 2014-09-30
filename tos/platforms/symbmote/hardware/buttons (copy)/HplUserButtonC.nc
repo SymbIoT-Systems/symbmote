@@ -1,5 +1,7 @@
 /*
- * Copyright (c) 2009-2010 People Power Co.
+ * Copyright (c) 2014 Laksh Bhatia
+ * Copyright (c) 2013 Eric B. Decker
+ * Copyright (c) 2007 Arch Rock Corporation
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -30,37 +32,30 @@
  * STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
  * ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED
  * OF THE POSSIBILITY OF SUCH DAMAGE.
- *
- * @author Peter A. Bigot <pab@peoplepowerco.com>
  */
 
-#include "hardware.h"
+/**
+ * Implementation of the user button for the symbmote platforms.
+ *
+ * We use S1 for the user button which is connected to P10.6
+ *
+ * @author Gilman Tolle <gtolle@archrock.com>
+ * @author Peter A. Bigot <pab@peoplepowerco.com>
+ * @author Eric B. Decker <cire831@gmail.com>
+ * @author Laksh Bhatia <laksh@symbiotsystems.com>
+ */
 
-configuration PlatformLedsC {
-  provides {
-    interface Init;
-    interface Leds;
-  }
+configuration HplUserButtonC {
+  provides interface HplMsp430GeneralIO;
+  provides interface GpioInterrupt;
 }
 implementation {
-  components PlatformLedsP;
-  Leds = PlatformLedsP;
-  Init = PlatformLedsP;
-
   components HplMsp430GeneralIOC as GeneralIOC;
+  components HplMsp430InterruptC as InterruptC;
 
-  /* RED LED (D1) at P4.7 */
-  components new Msp430GpioC() as Led0Impl;
-  Led0Impl -> GeneralIOC.Port47;
-  PlatformLedsP.Led0 -> Led0Impl;
+  HplMsp430GeneralIO = GeneralIOC.Port106;
 
-  /* Yellow LED (D2) at P4.6 */
-  components new Msp430GpioC() as Led1Impl;
-  Led1Impl -> GeneralIOC.Port54;
-  PlatformLedsP.Led1 -> Led1Impl;
-
- /* Green LED (D1) at P4.5 */
-  components new Msp430GpioC() as Led2Impl;
-  Led2Impl -> GeneralIOC.Port55;
-  PlatformLedsP.Led2 -> Led2Impl;
+  components new Msp430InterruptC() as InterruptUserButtonC;
+  InterruptUserButtonC.HplInterrupt -> InterruptC.Port106;
+  GpioInterrupt = InterruptUserButtonC.Interrupt;
 }

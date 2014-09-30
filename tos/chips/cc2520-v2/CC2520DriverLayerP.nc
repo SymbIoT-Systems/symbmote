@@ -743,7 +743,7 @@ module CC2520DriverLayerP {
     interface GeneralIO      as TXA;             /* gp1 -> tx_active  */
     interface GeneralIO      as EXCA;            /* gp2 -> exca  */
 
-    interface GpioCapture
+    interface GenericCapture<uint16_t>
                              as SfdCapture;
     interface GpioInterrupt  as ExcAInterrupt;
 
@@ -778,7 +778,7 @@ implementation {
 #define LOW_PRIORITY 0
 
 #define __PANIC_RADIO(where, w, x, y, z) do {               \
-	call Panic.panic(PANIC_RADIO, where, w, x, y, z);   \
+  call Panic.panic(PANIC_RADIO, where, w, x, y, z);   \
   } while (0)
 
 
@@ -1560,7 +1560,6 @@ implementation {
 
   tasklet_async command error_t RadioState.setChannel(uint8_t c) {
 
-    atomic{
     c &= CC2520_CHANNEL_MASK;
     if (dvr_cmd != CMD_NONE)
       return EBUSY;
@@ -1570,7 +1569,6 @@ implementation {
     channel = c;
     dvr_cmd = CMD_CHANNEL;
     call Tasklet.schedule();
-  }
     return SUCCESS;
   }
 
@@ -2428,7 +2426,7 @@ implementation {
 
   bool in_sfdcapture_captured;
 
-  async event void SfdCapture.captured(uint16_t cap_time)  {
+  async event void SfdCapture.captured(uint16_t cap_time, bool overwritten)  {
     sfd_stamp_t         *sfd_p;
     uint8_t              sfd_up;
     uint32_t             local;
@@ -3576,8 +3574,8 @@ implementation {
 
 #ifndef REQUIRE_PANIC
   default async command void Panic.panic(uint8_t pcode, uint8_t where, uint16_t arg0,
-					 uint16_t arg1, uint16_t arg2, uint16_t arg3) { }
+           uint16_t arg1, uint16_t arg2, uint16_t arg3) { }
   default async command void  Panic.warn(uint8_t pcode, uint8_t where, uint16_t arg0,
-					 uint16_t arg1, uint16_t arg2, uint16_t arg3) { }
+           uint16_t arg1, uint16_t arg2, uint16_t arg3) { }
 #endif
 }

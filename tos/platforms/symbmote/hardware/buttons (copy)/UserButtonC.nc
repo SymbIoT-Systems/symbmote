@@ -1,5 +1,6 @@
 /*
- * Copyright (c) 2009-2010 People Power Co.
+ * Copyright (c) 2013 Eric B. Decker
+ * Copyright (c) 2007 Arch Rock Corporation
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -30,37 +31,37 @@
  * STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
  * ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED
  * OF THE POSSIBILITY OF SUCH DAMAGE.
- *
- * @author Peter A. Bigot <pab@peoplepowerco.com>
  */
 
-#include "hardware.h"
+/**
+ * Implementation of the user button for the exp5438 platforms. Get
+ * returns the current state of the button by reading the pin,
+ * regardless of whether enable() or disable() has been called on the
+ * Interface. Notify.enable() and Notify.disable() modify the
+ * underlying interrupt state of the pin, and have the effect of
+ * enabling or disabling notifications that the button has changed
+ * state.
+ *
+ * @author Gilman Tolle <gtolle@archrock.com>
+ * @author Eric B. Decker <cire831@gmail.com>
+ */
 
-configuration PlatformLedsC {
-  provides {
-    interface Init;
-    interface Leds;
-  }
+#include <UserButton.h>
+
+configuration UserButtonC {
+  provides interface Get<button_state_t>;
+  provides interface Notify<button_state_t>;
 }
 implementation {
-  components PlatformLedsP;
-  Leds = PlatformLedsP;
-  Init = PlatformLedsP;
+  components HplUserButtonC;
+  components new SwitchToggleC();
+  SwitchToggleC.GpioInterrupt -> HplUserButtonC.GpioInterrupt;
+  SwitchToggleC.HplMsp430GeneralIO -> HplUserButtonC.HplMsp430GeneralIO;
 
-  components HplMsp430GeneralIOC as GeneralIOC;
+  components UserButtonP;
+  Get = UserButtonP;
+  Notify = UserButtonP;
 
-  /* RED LED (D1) at P4.7 */
-  components new Msp430GpioC() as Led0Impl;
-  Led0Impl -> GeneralIOC.Port47;
-  PlatformLedsP.Led0 -> Led0Impl;
-
-  /* Yellow LED (D2) at P4.6 */
-  components new Msp430GpioC() as Led1Impl;
-  Led1Impl -> GeneralIOC.Port54;
-  PlatformLedsP.Led1 -> Led1Impl;
-
- /* Green LED (D1) at P4.5 */
-  components new Msp430GpioC() as Led2Impl;
-  Led2Impl -> GeneralIOC.Port55;
-  PlatformLedsP.Led2 -> Led2Impl;
+  UserButtonP.GetLower -> SwitchToggleC.Get;
+  UserButtonP.NotifyLower -> SwitchToggleC.Notify;
 }

@@ -210,3 +210,1033 @@ Mon Sep  1 15:08:19 2014:	* ----------------------------------------------------
 Mon Sep  1 15:08:19 2014:	* Driver        : closed (EEM polling thread is already active)
 Mon Sep  1 15:08:19 2014:	* ----------------------------------------------------------------------------
 Mon Sep  1 15:08:19 2014:	*/
+Mon Sep 29 00:28:04 2014:	* -----/|-------------------------------------------------------------------- *
+Mon Sep 29 00:28:04 2014:	*     / |__                                                                   *
+Mon Sep 29 00:28:04 2014:	*    /_   /   MSP430 Flasher v1.3.0                                           *
+Mon Sep 29 00:28:04 2014:	*      | /                                                                    *
+Mon Sep 29 00:28:04 2014:	* -----|/-------------------------------------------------------------------- *
+Mon Sep 29 00:28:04 2014:	* Evaluating triggers...done
+Mon Sep 29 00:28:04 2014:	* Checking for available FET debuggers: 
+Mon Sep 29 00:28:04 2014:	* Found USB FET @ ttyACM0.Mon Sep 29 00:28:04 2014:	
+Mon Sep 29 00:28:04 2014:	* Initializing interface on TIUSB port...
+Mon Sep 29 00:28:05 2014:	# Exit: 19
+Mon Sep 29 00:28:05 2014:	# ERROR: Interface Communication error
+Mon Sep 29 00:28:05 2014:	* Disconnecting from device...done
+Mon Sep 29 00:28:05 2014:	* 
+Mon Sep 29 00:28:05 2014:	* ----------------------------------------------------------------------------
+Mon Sep 29 00:28:05 2014:	* Driver        : closed (No error)
+Mon Sep 29 00:28:05 2014:	* ----------------------------------------------------------------------------
+Mon Sep 29 00:28:05 2014:	*/
+Mon Sep 29 00:28:09 2014:	* -----/|-------------------------------------------------------------------- *
+Mon Sep 29 00:28:09 2014:	*     / |__                                                                   *
+Mon Sep 29 00:28:09 2014:	*    /_   /   MSP430 Flasher v1.3.0                                           *
+Mon Sep 29 00:28:09 2014:	*      | /                                                                    *
+Mon Sep 29 00:28:09 2014:	* -----|/-------------------------------------------------------------------- *
+Mon Sep 29 00:28:09 2014:	* Evaluating triggers...done
+Mon Sep 29 00:28:09 2014:	* Checking for available FET debuggers: 
+Mon Sep 29 00:28:09 2014:	* Found USB FET @ ttyACM0.Mon Sep 29 00:28:09 2014:	
+Mon Sep 29 00:28:09 2014:	* Initializing interface on TIUSB port...
+Mon Sep 29 00:28:10 2014:	# Exit: 19
+Mon Sep 29 00:28:10 2014:	# ERROR: Interface Communication error
+Mon Sep 29 00:28:10 2014:	* Disconnecting from device...done
+Mon Sep 29 00:28:10 2014:	* 
+Mon Sep 29 00:28:10 2014:	* ----------------------------------------------------------------------------
+Mon Sep 29 00:28:10 2014:	* Driver        : closed (No error)
+Mon Sep 29 00:28:10 2014:	* ----------------------------------------------------------------------------
+Mon Sep 29 00:28:10 2014:	*/
+Mon Sep 29 00:28:13 2014:	* -----/|-------------------------------------------------------------------- *
+Mon Sep 29 00:28:13 2014:	*     / |__                                                                   *
+Mon Sep 29 00:28:13 2014:	*    /_   /   MSP430 Flasher v1.3.0                                           *
+Mon Sep 29 00:28:13 2014:	*      | /                                                                    *
+Mon Sep 29 00:28:13 2014:	* -----|/-------------------------------------------------------------------- *
+Mon Sep 29 00:28:13 2014:	* Evaluating triggers...done
+Mon Sep 29 00:28:13 2014:	* Checking for available FET debuggers: 
+Mon Sep 29 00:28:13 2014:	* Found USB FET @ ttyACM0.Mon Sep 29 00:28:13 2014:	
+Mon Sep 29 00:28:13 2014:	* Initializing interface on TIUSB port...
+Mon Sep 29 00:28:14 2014:	# Exit: 19
+Mon Sep 29 00:28:14 2014:	# ERROR: Interface Communication error
+Mon Sep 29 00:28:14 2014:	* Disconnecting from device...done
+Mon Sep 29 00:28:14 2014:	* 
+Mon Sep 29 00:28:14 2014:	* ----------------------------------------------------------------------------
+Mon Sep 29 00:28:14 2014:	* Driver        : closed (No error)
+Mon Sep 29 00:28:14 2014:	* ----------------------------------------------------------------------------
+Mon Sep 29 00:28:14 2014:	*/
+Mon Sep 29 00:28:17 2014:	* -----/|-------------------------------------------------------------------- *
+Mon Sep 29 00:28:17 2014:	*     / |__                                                                   *
+Mon Sep 29 00:28:17 2014:	*    /_   /   MSP430 Flasher v1.3.0                                           *
+Mon Sep 29 00:28:17 2014:	*      | /                                                                    *
+Mon Sep 29 00:28:17 2014:	* -----|/-------------------------------------------------------------------- *
+Mon Sep 29 00:28:17 2014:	* Evaluating triggers...done
+Mon Sep 29 00:28:17 2014:	* Checking for available FET debuggers: 
+Mon Sep 29 00:28:17 2014:	* Found USB FET @ ttyACM0.Mon Sep 29 00:28:17 2014:	
+Mon Sep 29 00:28:17 2014:	* Initializing interface on TIUSB port...done
+Mon Sep 29 00:28:18 2014:	* Checking firmware compatibility: 
+Mon Sep 29 00:28:18 2014:	* FET firmware is up to date.
+Mon Sep 29 00:28:18 2014:	* Reading FW version...done
+Mon Sep 29 00:28:18 2014:	* Reading HW version...done
+Mon Sep 29 00:28:18 2014:	* Setting VCC to 3000 mV...done
+Mon Sep 29 00:28:19 2014:	* Accessing device...done
+Mon Sep 29 00:28:19 2014:	* Reading device information...done
+Mon Sep 29 00:28:19 2014:	* Loading file into device...done
+Mon Sep 29 00:28:21 2014:	* 
+Mon Sep 29 00:28:21 2014:	/* ---------------------------------------------------------------------------
+Mon Sep 29 00:28:21 2014:	* Arguments   : -n MSPF5438A -w build/symbmote/main.hex 
+Mon Sep 29 00:28:21 2014:	* Warning: Default options used due to incomplete argument list.
+Mon Sep 29 00:28:21 2014:	* ----------------------------------------------------------------------------
+Mon Sep 29 00:28:21 2014:	* Driver      : loaded
+Mon Sep 29 00:28:21 2014:	* Dll Version : 30400020
+Mon Sep 29 00:28:21 2014:	* FwVersion   : 30400020
+Mon Sep 29 00:28:21 2014:	* Interface   : TIUSB
+Mon Sep 29 00:28:21 2014:	* HwVersion   : U 1.40
+Mon Sep 29 00:28:21 2014:	* Mode        : AUTO
+Mon Sep 29 00:28:21 2014:	* Device      : MSP430F5438A
+Mon Sep 29 00:28:21 2014:	* EEM         : Level 7, ClockCntrl 2
+Mon Sep 29 00:28:21 2014:	* Prog.File   : build/symbmote/main.hex (ERASE_ALL, verified = FALSE)
+Mon Sep 29 00:28:21 2014:	* BSL Unlock  : FALSE
+Mon Sep 29 00:28:21 2014:	* InfoA Access: FALSE
+Mon Sep 29 00:28:21 2014:	* VCC ON      : 0 mV
+Mon Sep 29 00:28:21 2014:	* ----------------------------------------------------------------------------
+Mon Sep 29 00:28:21 2014:	* Powering down...done
+Mon Sep 29 00:28:22 2014:	* Disconnecting from device...done
+Mon Sep 29 00:28:24 2014:	* 
+Mon Sep 29 00:28:24 2014:	* ----------------------------------------------------------------------------
+Mon Sep 29 00:28:24 2014:	* Driver        : closed (EEM polling thread is already active)
+Mon Sep 29 00:28:24 2014:	* ----------------------------------------------------------------------------
+Mon Sep 29 00:28:24 2014:	*/
+Mon Sep 29 00:31:12 2014:	* -----/|-------------------------------------------------------------------- *
+Mon Sep 29 00:31:12 2014:	*     / |__                                                                   *
+Mon Sep 29 00:31:12 2014:	*    /_   /   MSP430 Flasher v1.3.0                                           *
+Mon Sep 29 00:31:12 2014:	*      | /                                                                    *
+Mon Sep 29 00:31:12 2014:	* -----|/-------------------------------------------------------------------- *
+Mon Sep 29 00:31:12 2014:	* Evaluating triggers...done
+Mon Sep 29 00:31:12 2014:	* Checking for available FET debuggers: 
+Mon Sep 29 00:31:12 2014:	* Found USB FET @ ttyACM0.Mon Sep 29 00:31:12 2014:	
+Mon Sep 29 00:31:12 2014:	* Initializing interface on TIUSB port...done
+Mon Sep 29 00:31:12 2014:	* Checking firmware compatibility: 
+Mon Sep 29 00:31:12 2014:	* FET firmware is up to date.
+Mon Sep 29 00:31:12 2014:	* Reading FW version...done
+Mon Sep 29 00:31:12 2014:	* Reading HW version...done
+Mon Sep 29 00:31:12 2014:	* Setting VCC to 3000 mV...done
+Mon Sep 29 00:31:13 2014:	* Accessing device...done
+Mon Sep 29 00:31:14 2014:	* Reading device information...done
+Mon Sep 29 00:31:14 2014:	* Loading file into device...
+Mon Sep 29 00:31:25 2014:	* ERROR : Could not erase device memory
+Mon Sep 29 00:31:25 2014:	* Unable to load file.
+Mon Sep 29 00:31:25 2014:	# Exit: 10
+Mon Sep 29 00:31:25 2014:	# ERROR: Could not reset device
+Mon Sep 29 00:31:25 2014:	* Disconnecting from device...done
+Mon Sep 29 00:31:26 2014:	* 
+Mon Sep 29 00:31:26 2014:	* ----------------------------------------------------------------------------
+Mon Sep 29 00:31:26 2014:	* Driver        : closed (No error)
+Mon Sep 29 00:31:26 2014:	* ----------------------------------------------------------------------------
+Mon Sep 29 00:31:26 2014:	*/
+Mon Sep 29 00:31:34 2014:	* -----/|-------------------------------------------------------------------- *
+Mon Sep 29 00:31:34 2014:	*     / |__                                                                   *
+Mon Sep 29 00:31:34 2014:	*    /_   /   MSP430 Flasher v1.3.0                                           *
+Mon Sep 29 00:31:34 2014:	*      | /                                                                    *
+Mon Sep 29 00:31:34 2014:	* -----|/-------------------------------------------------------------------- *
+Mon Sep 29 00:31:34 2014:	* Evaluating triggers...done
+Mon Sep 29 00:31:34 2014:	* Checking for available FET debuggers: 
+Mon Sep 29 00:31:34 2014:	* Found USB FET @ ttyACM0.Mon Sep 29 00:31:34 2014:	
+Mon Sep 29 00:31:34 2014:	* Initializing interface on TIUSB port...done
+Mon Sep 29 00:31:34 2014:	* Checking firmware compatibility: 
+Mon Sep 29 00:31:34 2014:	* FET firmware is up to date.
+Mon Sep 29 00:31:34 2014:	* Reading FW version...done
+Mon Sep 29 00:31:34 2014:	* Reading HW version...done
+Mon Sep 29 00:31:34 2014:	* Setting VCC to 3000 mV...done
+Mon Sep 29 00:31:35 2014:	* Accessing device...done
+Mon Sep 29 00:31:36 2014:	* Reading device information...done
+Mon Sep 29 00:31:36 2014:	* Loading file into device...done
+Mon Sep 29 00:31:38 2014:	* 
+Mon Sep 29 00:31:38 2014:	/* ---------------------------------------------------------------------------
+Mon Sep 29 00:31:38 2014:	* Arguments   : -n MSPF5438A -w build/symbmote/main.hex 
+Mon Sep 29 00:31:38 2014:	* Warning: Default options used due to incomplete argument list.
+Mon Sep 29 00:31:38 2014:	* ----------------------------------------------------------------------------
+Mon Sep 29 00:31:38 2014:	* Driver      : loaded
+Mon Sep 29 00:31:38 2014:	* Dll Version : 30400020
+Mon Sep 29 00:31:38 2014:	* FwVersion   : 30400020
+Mon Sep 29 00:31:38 2014:	* Interface   : TIUSB
+Mon Sep 29 00:31:38 2014:	* HwVersion   : U 1.40
+Mon Sep 29 00:31:38 2014:	* Mode        : AUTO
+Mon Sep 29 00:31:38 2014:	* Device      : MSP430F5438A
+Mon Sep 29 00:31:38 2014:	* EEM         : Level 7, ClockCntrl 2
+Mon Sep 29 00:31:38 2014:	* Prog.File   : build/symbmote/main.hex (ERASE_ALL, verified = FALSE)
+Mon Sep 29 00:31:38 2014:	* BSL Unlock  : FALSE
+Mon Sep 29 00:31:38 2014:	* InfoA Access: FALSE
+Mon Sep 29 00:31:38 2014:	* VCC ON      : 0 mV
+Mon Sep 29 00:31:38 2014:	* ----------------------------------------------------------------------------
+Mon Sep 29 00:31:38 2014:	* Powering down...done
+Mon Sep 29 00:31:39 2014:	* Disconnecting from device...done
+Mon Sep 29 00:31:40 2014:	* 
+Mon Sep 29 00:31:40 2014:	* ----------------------------------------------------------------------------
+Mon Sep 29 00:31:40 2014:	* Driver        : closed (EEM polling thread is already active)
+Mon Sep 29 00:31:40 2014:	* ----------------------------------------------------------------------------
+Mon Sep 29 00:31:40 2014:	*/
+Mon Sep 29 00:36:03 2014:	* -----/|-------------------------------------------------------------------- *
+Mon Sep 29 00:36:03 2014:	*     / |__                                                                   *
+Mon Sep 29 00:36:03 2014:	*    /_   /   MSP430 Flasher v1.3.0                                           *
+Mon Sep 29 00:36:03 2014:	*      | /                                                                    *
+Mon Sep 29 00:36:03 2014:	* -----|/-------------------------------------------------------------------- *
+Mon Sep 29 00:36:03 2014:	* Evaluating triggers...done
+Mon Sep 29 00:36:03 2014:	* Checking for available FET debuggers: 
+Mon Sep 29 00:36:03 2014:	* Found USB FET @ ttyACM0.Mon Sep 29 00:36:03 2014:	
+Mon Sep 29 00:36:03 2014:	* Initializing interface on TIUSB port...done
+Mon Sep 29 00:36:03 2014:	* Checking firmware compatibility: 
+Mon Sep 29 00:36:03 2014:	* FET firmware is up to date.
+Mon Sep 29 00:36:03 2014:	* Reading FW version...done
+Mon Sep 29 00:36:03 2014:	* Reading HW version...done
+Mon Sep 29 00:36:03 2014:	* Setting VCC to 3000 mV...done
+Mon Sep 29 00:36:04 2014:	* Accessing device...done
+Mon Sep 29 00:36:05 2014:	* Reading device information...done
+Mon Sep 29 00:36:05 2014:	* Loading file into device...done
+Mon Sep 29 00:36:07 2014:	* 
+Mon Sep 29 00:36:07 2014:	/* ---------------------------------------------------------------------------
+Mon Sep 29 00:36:07 2014:	* Arguments   : -n MSPF5438A -w build/symbmote/main.hex 
+Mon Sep 29 00:36:07 2014:	* Warning: Default options used due to incomplete argument list.
+Mon Sep 29 00:36:07 2014:	* ----------------------------------------------------------------------------
+Mon Sep 29 00:36:07 2014:	* Driver      : loaded
+Mon Sep 29 00:36:07 2014:	* Dll Version : 30400020
+Mon Sep 29 00:36:07 2014:	* FwVersion   : 30400020
+Mon Sep 29 00:36:07 2014:	* Interface   : TIUSB
+Mon Sep 29 00:36:07 2014:	* HwVersion   : U 1.40
+Mon Sep 29 00:36:07 2014:	* Mode        : AUTO
+Mon Sep 29 00:36:07 2014:	* Device      : MSP430F5438A
+Mon Sep 29 00:36:07 2014:	* EEM         : Level 7, ClockCntrl 2
+Mon Sep 29 00:36:07 2014:	* Prog.File   : build/symbmote/main.hex (ERASE_ALL, verified = FALSE)
+Mon Sep 29 00:36:07 2014:	* BSL Unlock  : FALSE
+Mon Sep 29 00:36:07 2014:	* InfoA Access: FALSE
+Mon Sep 29 00:36:07 2014:	* VCC ON      : 0 mV
+Mon Sep 29 00:36:07 2014:	* ----------------------------------------------------------------------------
+Mon Sep 29 00:36:07 2014:	* Powering down...done
+Mon Sep 29 00:36:08 2014:	* Disconnecting from device...done
+Mon Sep 29 00:36:09 2014:	* 
+Mon Sep 29 00:36:09 2014:	* ----------------------------------------------------------------------------
+Mon Sep 29 00:36:09 2014:	* Driver        : closed (EEM polling thread is already active)
+Mon Sep 29 00:36:09 2014:	* ----------------------------------------------------------------------------
+Mon Sep 29 00:36:09 2014:	*/
+Mon Sep 29 00:37:13 2014:	* -----/|-------------------------------------------------------------------- *
+Mon Sep 29 00:37:13 2014:	*     / |__                                                                   *
+Mon Sep 29 00:37:13 2014:	*    /_   /   MSP430 Flasher v1.3.0                                           *
+Mon Sep 29 00:37:13 2014:	*      | /                                                                    *
+Mon Sep 29 00:37:13 2014:	* -----|/-------------------------------------------------------------------- *
+Mon Sep 29 00:37:13 2014:	* Evaluating triggers...done
+Mon Sep 29 00:37:13 2014:	* Checking for available FET debuggers: 
+Mon Sep 29 00:37:13 2014:	* Found USB FET @ ttyACM0.Mon Sep 29 00:37:13 2014:	
+Mon Sep 29 00:37:13 2014:	* Initializing interface on TIUSB port...done
+Mon Sep 29 00:37:13 2014:	* Checking firmware compatibility: 
+Mon Sep 29 00:37:13 2014:	* FET firmware is up to date.
+Mon Sep 29 00:37:13 2014:	* Reading FW version...done
+Mon Sep 29 00:37:13 2014:	* Reading HW version...done
+Mon Sep 29 00:37:13 2014:	* Setting VCC to 3000 mV...done
+Mon Sep 29 00:37:14 2014:	* Accessing device...done
+Mon Sep 29 00:37:15 2014:	* Reading device information...done
+Mon Sep 29 00:37:15 2014:	* Loading file into device...done
+Mon Sep 29 00:37:17 2014:	* 
+Mon Sep 29 00:37:17 2014:	/* ---------------------------------------------------------------------------
+Mon Sep 29 00:37:17 2014:	* Arguments   : -n MSPF5438A -w build/symbmote/main.hex 
+Mon Sep 29 00:37:17 2014:	* Warning: Default options used due to incomplete argument list.
+Mon Sep 29 00:37:17 2014:	* ----------------------------------------------------------------------------
+Mon Sep 29 00:37:17 2014:	* Driver      : loaded
+Mon Sep 29 00:37:17 2014:	* Dll Version : 30400020
+Mon Sep 29 00:37:17 2014:	* FwVersion   : 30400020
+Mon Sep 29 00:37:17 2014:	* Interface   : TIUSB
+Mon Sep 29 00:37:17 2014:	* HwVersion   : U 1.40
+Mon Sep 29 00:37:17 2014:	* Mode        : AUTO
+Mon Sep 29 00:37:17 2014:	* Device      : MSP430F5438A
+Mon Sep 29 00:37:17 2014:	* EEM         : Level 7, ClockCntrl 2
+Mon Sep 29 00:37:17 2014:	* Prog.File   : build/symbmote/main.hex (ERASE_ALL, verified = FALSE)
+Mon Sep 29 00:37:17 2014:	* BSL Unlock  : FALSE
+Mon Sep 29 00:37:17 2014:	* InfoA Access: FALSE
+Mon Sep 29 00:37:17 2014:	* VCC ON      : 0 mV
+Mon Sep 29 00:37:17 2014:	* ----------------------------------------------------------------------------
+Mon Sep 29 00:37:17 2014:	* Powering down...done
+Mon Sep 29 00:37:18 2014:	* Disconnecting from device...done
+Mon Sep 29 00:37:19 2014:	* 
+Mon Sep 29 00:37:19 2014:	* ----------------------------------------------------------------------------
+Mon Sep 29 00:37:19 2014:	* Driver        : closed (EEM polling thread is already active)
+Mon Sep 29 00:37:19 2014:	* ----------------------------------------------------------------------------
+Mon Sep 29 00:37:19 2014:	*/
+Mon Sep 29 00:39:31 2014:	* -----/|-------------------------------------------------------------------- *
+Mon Sep 29 00:39:31 2014:	*     / |__                                                                   *
+Mon Sep 29 00:39:31 2014:	*    /_   /   MSP430 Flasher v1.3.0                                           *
+Mon Sep 29 00:39:31 2014:	*      | /                                                                    *
+Mon Sep 29 00:39:31 2014:	* -----|/-------------------------------------------------------------------- *
+Mon Sep 29 00:39:31 2014:	* Evaluating triggers...done
+Mon Sep 29 00:39:31 2014:	* Checking for available FET debuggers: 
+Mon Sep 29 00:39:31 2014:	* Found USB FET @ ttyACM0.Mon Sep 29 00:39:31 2014:	
+Mon Sep 29 00:39:31 2014:	* Initializing interface on TIUSB port...done
+Mon Sep 29 00:39:32 2014:	* Checking firmware compatibility: 
+Mon Sep 29 00:39:32 2014:	* FET firmware is up to date.
+Mon Sep 29 00:39:32 2014:	* Reading FW version...done
+Mon Sep 29 00:39:32 2014:	* Reading HW version...done
+Mon Sep 29 00:39:32 2014:	* Setting VCC to 3000 mV...done
+Mon Sep 29 00:39:33 2014:	* Accessing device...done
+Mon Sep 29 00:39:33 2014:	* Reading device information...done
+Mon Sep 29 00:39:33 2014:	* Loading file into device...done
+Mon Sep 29 00:39:35 2014:	* 
+Mon Sep 29 00:39:35 2014:	/* ---------------------------------------------------------------------------
+Mon Sep 29 00:39:35 2014:	* Arguments   : -n MSPF5438A -w build/symbmote/main.hex 
+Mon Sep 29 00:39:35 2014:	* Warning: Default options used due to incomplete argument list.
+Mon Sep 29 00:39:35 2014:	* ----------------------------------------------------------------------------
+Mon Sep 29 00:39:35 2014:	* Driver      : loaded
+Mon Sep 29 00:39:35 2014:	* Dll Version : 30400020
+Mon Sep 29 00:39:35 2014:	* FwVersion   : 30400020
+Mon Sep 29 00:39:35 2014:	* Interface   : TIUSB
+Mon Sep 29 00:39:35 2014:	* HwVersion   : U 1.40
+Mon Sep 29 00:39:35 2014:	* Mode        : AUTO
+Mon Sep 29 00:39:35 2014:	* Device      : MSP430F5438A
+Mon Sep 29 00:39:35 2014:	* EEM         : Level 7, ClockCntrl 2
+Mon Sep 29 00:39:35 2014:	* Prog.File   : build/symbmote/main.hex (ERASE_ALL, verified = FALSE)
+Mon Sep 29 00:39:35 2014:	* BSL Unlock  : FALSE
+Mon Sep 29 00:39:35 2014:	* InfoA Access: FALSE
+Mon Sep 29 00:39:35 2014:	* VCC ON      : 0 mV
+Mon Sep 29 00:39:35 2014:	* ----------------------------------------------------------------------------
+Mon Sep 29 00:39:35 2014:	* Powering down...done
+Mon Sep 29 00:39:36 2014:	* Disconnecting from device...done
+Mon Sep 29 00:39:39 2014:	* 
+Mon Sep 29 00:39:39 2014:	* ----------------------------------------------------------------------------
+Mon Sep 29 00:39:39 2014:	* Driver        : closed (EEM polling thread is already active)
+Mon Sep 29 00:39:39 2014:	* ----------------------------------------------------------------------------
+Mon Sep 29 00:39:39 2014:	*/
+Mon Sep 29 00:40:24 2014:	* -----/|-------------------------------------------------------------------- *
+Mon Sep 29 00:40:24 2014:	*     / |__                                                                   *
+Mon Sep 29 00:40:24 2014:	*    /_   /   MSP430 Flasher v1.3.0                                           *
+Mon Sep 29 00:40:24 2014:	*      | /                                                                    *
+Mon Sep 29 00:40:24 2014:	* -----|/-------------------------------------------------------------------- *
+Mon Sep 29 00:40:24 2014:	* Evaluating triggers...done
+Mon Sep 29 00:40:24 2014:	* Checking for available FET debuggers: 
+Mon Sep 29 00:40:24 2014:	* Found USB FET @ ttyACM0.Mon Sep 29 00:40:24 2014:	
+Mon Sep 29 00:40:24 2014:	* Initializing interface on TIUSB port...
+Mon Sep 29 00:40:28 2014:	# Exit: 19
+Mon Sep 29 00:40:28 2014:	# ERROR: Interface Communication error
+Mon Sep 29 00:40:28 2014:	* Disconnecting from device...done
+Mon Sep 29 00:40:28 2014:	* 
+Mon Sep 29 00:40:28 2014:	* ----------------------------------------------------------------------------
+Mon Sep 29 00:40:28 2014:	* Driver        : closed (No error)
+Mon Sep 29 00:40:28 2014:	* ----------------------------------------------------------------------------
+Mon Sep 29 00:40:28 2014:	*/
+Mon Sep 29 00:40:34 2014:	* -----/|-------------------------------------------------------------------- *
+Mon Sep 29 00:40:34 2014:	*     / |__                                                                   *
+Mon Sep 29 00:40:34 2014:	*    /_   /   MSP430 Flasher v1.3.0                                           *
+Mon Sep 29 00:40:34 2014:	*      | /                                                                    *
+Mon Sep 29 00:40:34 2014:	* -----|/-------------------------------------------------------------------- *
+Mon Sep 29 00:40:34 2014:	* Evaluating triggers...done
+Mon Sep 29 00:40:34 2014:	* Checking for available FET debuggers: 
+Mon Sep 29 00:40:34 2014:	* Found USB FET @ ttyACM0.Mon Sep 29 00:40:34 2014:	
+Mon Sep 29 00:40:34 2014:	* Initializing interface on TIUSB port...done
+Mon Sep 29 00:40:34 2014:	* Checking firmware compatibility: 
+Mon Sep 29 00:40:34 2014:	* FET firmware is up to date.
+Mon Sep 29 00:40:34 2014:	* Reading FW version...done
+Mon Sep 29 00:40:34 2014:	* Reading HW version...done
+Mon Sep 29 00:40:34 2014:	* Setting VCC to 3000 mV...done
+Mon Sep 29 00:40:35 2014:	* Accessing device...done
+Mon Sep 29 00:40:36 2014:	* Reading device information...done
+Mon Sep 29 00:40:36 2014:	* Loading file into device...done
+Mon Sep 29 00:40:38 2014:	* 
+Mon Sep 29 00:40:38 2014:	/* ---------------------------------------------------------------------------
+Mon Sep 29 00:40:38 2014:	* Arguments   : -n MSPF5438A -w build/symbmote/main.hex 
+Mon Sep 29 00:40:38 2014:	* Warning: Default options used due to incomplete argument list.
+Mon Sep 29 00:40:38 2014:	* ----------------------------------------------------------------------------
+Mon Sep 29 00:40:38 2014:	* Driver      : loaded
+Mon Sep 29 00:40:38 2014:	* Dll Version : 30400020
+Mon Sep 29 00:40:38 2014:	* FwVersion   : 30400020
+Mon Sep 29 00:40:38 2014:	* Interface   : TIUSB
+Mon Sep 29 00:40:38 2014:	* HwVersion   : U 1.40
+Mon Sep 29 00:40:38 2014:	* Mode        : AUTO
+Mon Sep 29 00:40:38 2014:	* Device      : MSP430F5438A
+Mon Sep 29 00:40:38 2014:	* EEM         : Level 7, ClockCntrl 2
+Mon Sep 29 00:40:38 2014:	* Prog.File   : build/symbmote/main.hex (ERASE_ALL, verified = FALSE)
+Mon Sep 29 00:40:38 2014:	* BSL Unlock  : FALSE
+Mon Sep 29 00:40:38 2014:	* InfoA Access: FALSE
+Mon Sep 29 00:40:38 2014:	* VCC ON      : 0 mV
+Mon Sep 29 00:40:38 2014:	* ----------------------------------------------------------------------------
+Mon Sep 29 00:40:38 2014:	* Powering down...done
+Mon Sep 29 00:40:39 2014:	* Disconnecting from device...done
+Mon Sep 29 00:40:42 2014:	* 
+Mon Sep 29 00:40:42 2014:	* ----------------------------------------------------------------------------
+Mon Sep 29 00:40:42 2014:	* Driver        : closed (EEM polling thread is already active)
+Mon Sep 29 00:40:42 2014:	* ----------------------------------------------------------------------------
+Mon Sep 29 00:40:42 2014:	*/
+Mon Sep 29 00:42:35 2014:	* -----/|-------------------------------------------------------------------- *
+Mon Sep 29 00:42:35 2014:	*     / |__                                                                   *
+Mon Sep 29 00:42:35 2014:	*    /_   /   MSP430 Flasher v1.3.0                                           *
+Mon Sep 29 00:42:35 2014:	*      | /                                                                    *
+Mon Sep 29 00:42:35 2014:	* -----|/-------------------------------------------------------------------- *
+Mon Sep 29 00:42:35 2014:	* Evaluating triggers...done
+Mon Sep 29 00:42:35 2014:	* Checking for available FET debuggers: 
+Mon Sep 29 00:42:35 2014:	* Found USB FET @ ttyACM0.Mon Sep 29 00:42:35 2014:	
+Mon Sep 29 00:42:35 2014:	* Initializing interface on TIUSB port...done
+Mon Sep 29 00:42:36 2014:	* Checking firmware compatibility: 
+Mon Sep 29 00:42:36 2014:	* FET firmware is up to date.
+Mon Sep 29 00:42:36 2014:	* Reading FW version...done
+Mon Sep 29 00:42:36 2014:	* Reading HW version...done
+Mon Sep 29 00:42:36 2014:	* Setting VCC to 3000 mV...done
+Mon Sep 29 00:42:37 2014:	* Accessing device...done
+Mon Sep 29 00:42:37 2014:	* Reading device information...done
+Mon Sep 29 00:42:37 2014:	* Loading file into device...done
+Mon Sep 29 00:42:39 2014:	* 
+Mon Sep 29 00:42:39 2014:	/* ---------------------------------------------------------------------------
+Mon Sep 29 00:42:39 2014:	* Arguments   : -n MSPF5438A -w build/symbmote/main.hex 
+Mon Sep 29 00:42:39 2014:	* Warning: Default options used due to incomplete argument list.
+Mon Sep 29 00:42:39 2014:	* ----------------------------------------------------------------------------
+Mon Sep 29 00:42:39 2014:	* Driver      : loaded
+Mon Sep 29 00:42:39 2014:	* Dll Version : 30400020
+Mon Sep 29 00:42:39 2014:	* FwVersion   : 30400020
+Mon Sep 29 00:42:39 2014:	* Interface   : TIUSB
+Mon Sep 29 00:42:39 2014:	* HwVersion   : U 1.40
+Mon Sep 29 00:42:39 2014:	* Mode        : AUTO
+Mon Sep 29 00:42:39 2014:	* Device      : MSP430F5438A
+Mon Sep 29 00:42:39 2014:	* EEM         : Level 7, ClockCntrl 2
+Mon Sep 29 00:42:39 2014:	* Prog.File   : build/symbmote/main.hex (ERASE_ALL, verified = FALSE)
+Mon Sep 29 00:42:39 2014:	* BSL Unlock  : FALSE
+Mon Sep 29 00:42:39 2014:	* InfoA Access: FALSE
+Mon Sep 29 00:42:39 2014:	* VCC ON      : 0 mV
+Mon Sep 29 00:42:39 2014:	* ----------------------------------------------------------------------------
+Mon Sep 29 00:42:39 2014:	* Powering down...done
+Mon Sep 29 00:42:40 2014:	* Disconnecting from device...done
+Mon Sep 29 00:42:41 2014:	* 
+Mon Sep 29 00:42:41 2014:	* ----------------------------------------------------------------------------
+Mon Sep 29 00:42:41 2014:	* Driver        : closed (EEM polling thread is already active)
+Mon Sep 29 00:42:41 2014:	* ----------------------------------------------------------------------------
+Mon Sep 29 00:42:41 2014:	*/
+Mon Sep 29 00:45:38 2014:	* -----/|-------------------------------------------------------------------- *
+Mon Sep 29 00:45:38 2014:	*     / |__                                                                   *
+Mon Sep 29 00:45:38 2014:	*    /_   /   MSP430 Flasher v1.3.0                                           *
+Mon Sep 29 00:45:38 2014:	*      | /                                                                    *
+Mon Sep 29 00:45:38 2014:	* -----|/-------------------------------------------------------------------- *
+Mon Sep 29 00:45:38 2014:	* Evaluating triggers...done
+Mon Sep 29 00:45:38 2014:	* Checking for available FET debuggers: 
+Mon Sep 29 00:45:39 2014:	* Found USB FET @ ttyACM0.Mon Sep 29 00:45:39 2014:	
+Mon Sep 29 00:45:39 2014:	* Initializing interface on TIUSB port...
+Mon Sep 29 00:45:43 2014:	# Exit: 19
+Mon Sep 29 00:45:43 2014:	# ERROR: Interface Communication error
+Mon Sep 29 00:45:43 2014:	* Disconnecting from device...done
+Mon Sep 29 00:45:43 2014:	* 
+Mon Sep 29 00:45:43 2014:	* ----------------------------------------------------------------------------
+Mon Sep 29 00:45:43 2014:	* Driver        : closed (No error)
+Mon Sep 29 00:45:43 2014:	* ----------------------------------------------------------------------------
+Mon Sep 29 00:45:43 2014:	*/
+Mon Sep 29 00:45:53 2014:	* -----/|-------------------------------------------------------------------- *
+Mon Sep 29 00:45:53 2014:	*     / |__                                                                   *
+Mon Sep 29 00:45:53 2014:	*    /_   /   MSP430 Flasher v1.3.0                                           *
+Mon Sep 29 00:45:53 2014:	*      | /                                                                    *
+Mon Sep 29 00:45:53 2014:	* -----|/-------------------------------------------------------------------- *
+Mon Sep 29 00:45:53 2014:	* Evaluating triggers...done
+Mon Sep 29 00:45:53 2014:	* Checking for available FET debuggers: 
+Mon Sep 29 00:45:53 2014:	* Found USB FET @ ttyACM0.Mon Sep 29 00:45:53 2014:	
+Mon Sep 29 00:45:53 2014:	* Initializing interface on TIUSB port...done
+Mon Sep 29 00:45:54 2014:	* Checking firmware compatibility: 
+Mon Sep 29 00:45:54 2014:	* FET firmware is up to date.
+Mon Sep 29 00:45:54 2014:	* Reading FW version...done
+Mon Sep 29 00:45:54 2014:	* Reading HW version...done
+Mon Sep 29 00:45:54 2014:	* Setting VCC to 3000 mV...done
+Mon Sep 29 00:45:55 2014:	* Accessing device...done
+Mon Sep 29 00:45:55 2014:	* Reading device information...done
+Mon Sep 29 00:45:55 2014:	* Loading file into device...done
+Mon Sep 29 00:45:57 2014:	* 
+Mon Sep 29 00:45:57 2014:	/* ---------------------------------------------------------------------------
+Mon Sep 29 00:45:57 2014:	* Arguments   : -n MSPF5438A -w build/symbmote/main.hex 
+Mon Sep 29 00:45:57 2014:	* Warning: Default options used due to incomplete argument list.
+Mon Sep 29 00:45:57 2014:	* ----------------------------------------------------------------------------
+Mon Sep 29 00:45:57 2014:	* Driver      : loaded
+Mon Sep 29 00:45:57 2014:	* Dll Version : 30400020
+Mon Sep 29 00:45:57 2014:	* FwVersion   : 30400020
+Mon Sep 29 00:45:57 2014:	* Interface   : TIUSB
+Mon Sep 29 00:45:57 2014:	* HwVersion   : U 1.40
+Mon Sep 29 00:45:57 2014:	* Mode        : AUTO
+Mon Sep 29 00:45:57 2014:	* Device      : MSP430F5438A
+Mon Sep 29 00:45:57 2014:	* EEM         : Level 7, ClockCntrl 2
+Mon Sep 29 00:45:57 2014:	* Prog.File   : build/symbmote/main.hex (ERASE_ALL, verified = FALSE)
+Mon Sep 29 00:45:57 2014:	* BSL Unlock  : FALSE
+Mon Sep 29 00:45:57 2014:	* InfoA Access: FALSE
+Mon Sep 29 00:45:57 2014:	* VCC ON      : 0 mV
+Mon Sep 29 00:45:57 2014:	* ----------------------------------------------------------------------------
+Mon Sep 29 00:45:57 2014:	* Powering down...done
+Mon Sep 29 00:45:58 2014:	* Disconnecting from device...done
+Mon Sep 29 00:45:59 2014:	* 
+Mon Sep 29 00:45:59 2014:	* ----------------------------------------------------------------------------
+Mon Sep 29 00:45:59 2014:	* Driver        : closed (EEM polling thread is already active)
+Mon Sep 29 00:45:59 2014:	* ----------------------------------------------------------------------------
+Mon Sep 29 00:45:59 2014:	*/
+Mon Sep 29 01:11:59 2014:	* -----/|-------------------------------------------------------------------- *
+Mon Sep 29 01:11:59 2014:	*     / |__                                                                   *
+Mon Sep 29 01:11:59 2014:	*    /_   /   MSP430 Flasher v1.3.0                                           *
+Mon Sep 29 01:11:59 2014:	*      | /                                                                    *
+Mon Sep 29 01:11:59 2014:	* -----|/-------------------------------------------------------------------- *
+Mon Sep 29 01:11:59 2014:	* Evaluating triggers...done
+Mon Sep 29 01:11:59 2014:	* Checking for available FET debuggers: 
+Mon Sep 29 01:11:59 2014:	* Couldn't find any connected USB FETs!
+Mon Sep 29 01:11:59 2014:	# Exit: 11
+Mon Sep 29 01:11:59 2014:	# MSP DebugStack not initialized
+Mon Sep 29 01:11:59 2014:	* Powering down...done
+Mon Sep 29 01:11:59 2014:	* Disconnecting from device...done
+Mon Sep 29 01:11:59 2014:	* 
+Mon Sep 29 01:11:59 2014:	* ----------------------------------------------------------------------------
+Mon Sep 29 01:11:59 2014:	* Driver        : closed (MSP DebugStack not initialized)
+Mon Sep 29 01:11:59 2014:	* ----------------------------------------------------------------------------
+Mon Sep 29 01:11:59 2014:	*/
+Mon Sep 29 01:13:19 2014:	* -----/|-------------------------------------------------------------------- *
+Mon Sep 29 01:13:19 2014:	*     / |__                                                                   *
+Mon Sep 29 01:13:19 2014:	*    /_   /   MSP430 Flasher v1.3.0                                           *
+Mon Sep 29 01:13:19 2014:	*      | /                                                                    *
+Mon Sep 29 01:13:19 2014:	* -----|/-------------------------------------------------------------------- *
+Mon Sep 29 01:13:19 2014:	* Evaluating triggers...done
+Mon Sep 29 01:13:19 2014:	* Checking for available FET debuggers: 
+Mon Sep 29 01:13:19 2014:	* Found USB FET @ ttyACM0.Mon Sep 29 01:13:19 2014:	
+Mon Sep 29 01:13:19 2014:	* Initializing interface on TIUSB port...done
+Mon Sep 29 01:13:20 2014:	* Checking firmware compatibility: 
+Mon Sep 29 01:13:20 2014:	* FET firmware is up to date.
+Mon Sep 29 01:13:20 2014:	* Reading FW version...done
+Mon Sep 29 01:13:20 2014:	* Reading HW version...done
+Mon Sep 29 01:13:20 2014:	* Setting VCC to 3000 mV...done
+Mon Sep 29 01:13:21 2014:	* Accessing device...done
+Mon Sep 29 01:13:21 2014:	* Reading device information...done
+Mon Sep 29 01:13:21 2014:	* Loading file into device...done
+Mon Sep 29 01:13:23 2014:	* 
+Mon Sep 29 01:13:23 2014:	/* ---------------------------------------------------------------------------
+Mon Sep 29 01:13:23 2014:	* Arguments   : -n MSPF5438A -w build/symbmote/main.hex 
+Mon Sep 29 01:13:23 2014:	* Warning: Default options used due to incomplete argument list.
+Mon Sep 29 01:13:23 2014:	* ----------------------------------------------------------------------------
+Mon Sep 29 01:13:23 2014:	* Driver      : loaded
+Mon Sep 29 01:13:23 2014:	* Dll Version : 30400020
+Mon Sep 29 01:13:23 2014:	* FwVersion   : 30400020
+Mon Sep 29 01:13:23 2014:	* Interface   : TIUSB
+Mon Sep 29 01:13:23 2014:	* HwVersion   : U 1.40
+Mon Sep 29 01:13:23 2014:	* Mode        : AUTO
+Mon Sep 29 01:13:23 2014:	* Device      : MSP430F5438A
+Mon Sep 29 01:13:23 2014:	* EEM         : Level 7, ClockCntrl 2
+Mon Sep 29 01:13:23 2014:	* Prog.File   : build/symbmote/main.hex (ERASE_ALL, verified = FALSE)
+Mon Sep 29 01:13:23 2014:	* BSL Unlock  : FALSE
+Mon Sep 29 01:13:23 2014:	* InfoA Access: FALSE
+Mon Sep 29 01:13:23 2014:	* VCC ON      : 0 mV
+Mon Sep 29 01:13:23 2014:	* ----------------------------------------------------------------------------
+Mon Sep 29 01:13:23 2014:	* Powering down...done
+Mon Sep 29 01:13:24 2014:	* Disconnecting from device...done
+Mon Sep 29 01:13:25 2014:	* 
+Mon Sep 29 01:13:25 2014:	* ----------------------------------------------------------------------------
+Mon Sep 29 01:13:25 2014:	* Driver        : closed (EEM polling thread is already active)
+Mon Sep 29 01:13:25 2014:	* ----------------------------------------------------------------------------
+Mon Sep 29 01:13:25 2014:	*/
+Mon Sep 29 15:42:27 2014:	* -----/|-------------------------------------------------------------------- *
+Mon Sep 29 15:42:27 2014:	*     / |__                                                                   *
+Mon Sep 29 15:42:27 2014:	*    /_   /   MSP430 Flasher v1.3.0                                           *
+Mon Sep 29 15:42:27 2014:	*      | /                                                                    *
+Mon Sep 29 15:42:27 2014:	* -----|/-------------------------------------------------------------------- *
+Mon Sep 29 15:42:27 2014:	* Evaluating triggers...done
+Mon Sep 29 15:42:27 2014:	* Checking for available FET debuggers: 
+Mon Sep 29 15:42:28 2014:	* Found USB FET @ ttyACM0.Mon Sep 29 15:42:28 2014:	
+Mon Sep 29 15:42:28 2014:	* Initializing interface on TIUSB port...done
+Mon Sep 29 15:42:28 2014:	* Checking firmware compatibility: 
+Mon Sep 29 15:42:28 2014:	* FET firmware is up to date.
+Mon Sep 29 15:42:28 2014:	* Reading FW version...done
+Mon Sep 29 15:42:28 2014:	* Reading HW version...done
+Mon Sep 29 15:42:28 2014:	* Setting VCC to 3000 mV...done
+Mon Sep 29 15:42:29 2014:	* Accessing device...done
+Mon Sep 29 15:42:29 2014:	* Reading device information...done
+Mon Sep 29 15:42:29 2014:	* Loading file into device...done
+Mon Sep 29 15:42:32 2014:	* 
+Mon Sep 29 15:42:32 2014:	/* ---------------------------------------------------------------------------
+Mon Sep 29 15:42:32 2014:	* Arguments   : -n MSPF5438A -w build/symbmote/main.hex 
+Mon Sep 29 15:42:32 2014:	* Warning: Default options used due to incomplete argument list.
+Mon Sep 29 15:42:32 2014:	* ----------------------------------------------------------------------------
+Mon Sep 29 15:42:32 2014:	* Driver      : loaded
+Mon Sep 29 15:42:32 2014:	* Dll Version : 30400020
+Mon Sep 29 15:42:32 2014:	* FwVersion   : 30400020
+Mon Sep 29 15:42:32 2014:	* Interface   : TIUSB
+Mon Sep 29 15:42:32 2014:	* HwVersion   : U 1.40
+Mon Sep 29 15:42:32 2014:	* Mode        : AUTO
+Mon Sep 29 15:42:32 2014:	* Device      : MSP430F5438A
+Mon Sep 29 15:42:32 2014:	* EEM         : Level 7, ClockCntrl 2
+Mon Sep 29 15:42:32 2014:	* Prog.File   : build/symbmote/main.hex (ERASE_ALL, verified = FALSE)
+Mon Sep 29 15:42:32 2014:	* BSL Unlock  : FALSE
+Mon Sep 29 15:42:32 2014:	* InfoA Access: FALSE
+Mon Sep 29 15:42:32 2014:	* VCC ON      : 0 mV
+Mon Sep 29 15:42:32 2014:	* ----------------------------------------------------------------------------
+Mon Sep 29 15:42:32 2014:	* Powering down...done
+Mon Sep 29 15:42:32 2014:	* Disconnecting from device...done
+Mon Sep 29 15:42:34 2014:	* 
+Mon Sep 29 15:42:34 2014:	* ----------------------------------------------------------------------------
+Mon Sep 29 15:42:34 2014:	* Driver        : closed (EEM polling thread is already active)
+Mon Sep 29 15:42:34 2014:	* ----------------------------------------------------------------------------
+Mon Sep 29 15:42:34 2014:	*/
+Mon Sep 29 15:43:51 2014:	* -----/|-------------------------------------------------------------------- *
+Mon Sep 29 15:43:51 2014:	*     / |__                                                                   *
+Mon Sep 29 15:43:51 2014:	*    /_   /   MSP430 Flasher v1.3.0                                           *
+Mon Sep 29 15:43:51 2014:	*      | /                                                                    *
+Mon Sep 29 15:43:51 2014:	* -----|/-------------------------------------------------------------------- *
+Mon Sep 29 15:43:51 2014:	* Evaluating triggers...done
+Mon Sep 29 15:43:51 2014:	* Checking for available FET debuggers: 
+Mon Sep 29 15:43:51 2014:	* Found USB FET @ ttyACM0.Mon Sep 29 15:43:51 2014:	
+Mon Sep 29 15:43:51 2014:	* Initializing interface on TIUSB port...done
+Mon Sep 29 15:43:52 2014:	* Checking firmware compatibility: 
+Mon Sep 29 15:43:52 2014:	* FET firmware is up to date.
+Mon Sep 29 15:43:52 2014:	* Reading FW version...done
+Mon Sep 29 15:43:52 2014:	* Reading HW version...done
+Mon Sep 29 15:43:52 2014:	* Setting VCC to 3000 mV...done
+Mon Sep 29 15:43:53 2014:	* Accessing device...done
+Mon Sep 29 15:43:53 2014:	* Reading device information...done
+Mon Sep 29 15:43:53 2014:	* Loading file into device...done
+Mon Sep 29 15:43:55 2014:	* 
+Mon Sep 29 15:43:55 2014:	/* ---------------------------------------------------------------------------
+Mon Sep 29 15:43:55 2014:	* Arguments   : -n MSPF5438A -w build/symbmote/main.hex 
+Mon Sep 29 15:43:55 2014:	* Warning: Default options used due to incomplete argument list.
+Mon Sep 29 15:43:55 2014:	* ----------------------------------------------------------------------------
+Mon Sep 29 15:43:55 2014:	* Driver      : loaded
+Mon Sep 29 15:43:55 2014:	* Dll Version : 30400020
+Mon Sep 29 15:43:55 2014:	* FwVersion   : 30400020
+Mon Sep 29 15:43:55 2014:	* Interface   : TIUSB
+Mon Sep 29 15:43:55 2014:	* HwVersion   : U 1.40
+Mon Sep 29 15:43:55 2014:	* Mode        : AUTO
+Mon Sep 29 15:43:55 2014:	* Device      : MSP430F5438A
+Mon Sep 29 15:43:55 2014:	* EEM         : Level 7, ClockCntrl 2
+Mon Sep 29 15:43:55 2014:	* Prog.File   : build/symbmote/main.hex (ERASE_ALL, verified = FALSE)
+Mon Sep 29 15:43:55 2014:	* BSL Unlock  : FALSE
+Mon Sep 29 15:43:55 2014:	* InfoA Access: FALSE
+Mon Sep 29 15:43:55 2014:	* VCC ON      : 0 mV
+Mon Sep 29 15:43:55 2014:	* ----------------------------------------------------------------------------
+Mon Sep 29 15:43:55 2014:	* Powering down...done
+Mon Sep 29 15:43:56 2014:	* Disconnecting from device...done
+Mon Sep 29 15:43:57 2014:	* 
+Mon Sep 29 15:43:57 2014:	* ----------------------------------------------------------------------------
+Mon Sep 29 15:43:57 2014:	* Driver        : closed (EEM polling thread is already active)
+Mon Sep 29 15:43:57 2014:	* ----------------------------------------------------------------------------
+Mon Sep 29 15:43:57 2014:	*/
+Mon Sep 29 16:03:05 2014:	* -----/|-------------------------------------------------------------------- *
+Mon Sep 29 16:03:05 2014:	*     / |__                                                                   *
+Mon Sep 29 16:03:05 2014:	*    /_   /   MSP430 Flasher v1.3.0                                           *
+Mon Sep 29 16:03:05 2014:	*      | /                                                                    *
+Mon Sep 29 16:03:05 2014:	* -----|/-------------------------------------------------------------------- *
+Mon Sep 29 16:03:05 2014:	* Evaluating triggers...done
+Mon Sep 29 16:03:05 2014:	* Checking for available FET debuggers: 
+Mon Sep 29 16:03:05 2014:	* Found USB FET @ ttyACM0.Mon Sep 29 16:03:05 2014:	
+Mon Sep 29 16:03:05 2014:	* Initializing interface on TIUSB port...
+Mon Sep 29 16:03:09 2014:	# Exit: 19
+Mon Sep 29 16:03:09 2014:	# ERROR: Interface Communication error
+Mon Sep 29 16:03:09 2014:	* Disconnecting from device...done
+Mon Sep 29 16:03:09 2014:	* 
+Mon Sep 29 16:03:09 2014:	* ----------------------------------------------------------------------------
+Mon Sep 29 16:03:09 2014:	* Driver        : closed (No error)
+Mon Sep 29 16:03:09 2014:	* ----------------------------------------------------------------------------
+Mon Sep 29 16:03:09 2014:	*/
+Mon Sep 29 16:03:13 2014:	* -----/|-------------------------------------------------------------------- *
+Mon Sep 29 16:03:13 2014:	*     / |__                                                                   *
+Mon Sep 29 16:03:13 2014:	*    /_   /   MSP430 Flasher v1.3.0                                           *
+Mon Sep 29 16:03:13 2014:	*      | /                                                                    *
+Mon Sep 29 16:03:13 2014:	* -----|/-------------------------------------------------------------------- *
+Mon Sep 29 16:03:13 2014:	* Evaluating triggers...done
+Mon Sep 29 16:03:13 2014:	* Checking for available FET debuggers: 
+Mon Sep 29 16:03:13 2014:	* Found USB FET @ ttyACM0.Mon Sep 29 16:03:13 2014:	
+Mon Sep 29 16:03:13 2014:	* Initializing interface on TIUSB port...done
+Mon Sep 29 16:03:14 2014:	* Checking firmware compatibility: 
+Mon Sep 29 16:03:14 2014:	* FET firmware is up to date.
+Mon Sep 29 16:03:14 2014:	* Reading FW version...done
+Mon Sep 29 16:03:14 2014:	* Reading HW version...done
+Mon Sep 29 16:03:14 2014:	* Setting VCC to 3000 mV...done
+Mon Sep 29 16:03:15 2014:	* Accessing device...done
+Mon Sep 29 16:03:15 2014:	* Reading device information...done
+Mon Sep 29 16:03:15 2014:	* Loading file into device...done
+Mon Sep 29 16:03:17 2014:	* 
+Mon Sep 29 16:03:17 2014:	/* ---------------------------------------------------------------------------
+Mon Sep 29 16:03:17 2014:	* Arguments   : -n MSPF5438A -w build/symbmote/main.hex 
+Mon Sep 29 16:03:17 2014:	* Warning: Default options used due to incomplete argument list.
+Mon Sep 29 16:03:17 2014:	* ----------------------------------------------------------------------------
+Mon Sep 29 16:03:17 2014:	* Driver      : loaded
+Mon Sep 29 16:03:17 2014:	* Dll Version : 30400020
+Mon Sep 29 16:03:17 2014:	* FwVersion   : 30400020
+Mon Sep 29 16:03:17 2014:	* Interface   : TIUSB
+Mon Sep 29 16:03:17 2014:	* HwVersion   : U 1.40
+Mon Sep 29 16:03:17 2014:	* Mode        : AUTO
+Mon Sep 29 16:03:17 2014:	* Device      : MSP430F5438A
+Mon Sep 29 16:03:17 2014:	* EEM         : Level 7, ClockCntrl 2
+Mon Sep 29 16:03:17 2014:	* Prog.File   : build/symbmote/main.hex (ERASE_ALL, verified = FALSE)
+Mon Sep 29 16:03:17 2014:	* BSL Unlock  : FALSE
+Mon Sep 29 16:03:17 2014:	* InfoA Access: FALSE
+Mon Sep 29 16:03:17 2014:	* VCC ON      : 0 mV
+Mon Sep 29 16:03:17 2014:	* ----------------------------------------------------------------------------
+Mon Sep 29 16:03:17 2014:	* Powering down...done
+Mon Sep 29 16:03:18 2014:	* Disconnecting from device...done
+Mon Sep 29 16:03:19 2014:	* 
+Mon Sep 29 16:03:19 2014:	* ----------------------------------------------------------------------------
+Mon Sep 29 16:03:19 2014:	* Driver        : closed (EEM polling thread is already active)
+Mon Sep 29 16:03:19 2014:	* ----------------------------------------------------------------------------
+Mon Sep 29 16:03:19 2014:	*/
+Mon Sep 29 16:06:28 2014:	* -----/|-------------------------------------------------------------------- *
+Mon Sep 29 16:06:28 2014:	*     / |__                                                                   *
+Mon Sep 29 16:06:28 2014:	*    /_   /   MSP430 Flasher v1.3.0                                           *
+Mon Sep 29 16:06:28 2014:	*      | /                                                                    *
+Mon Sep 29 16:06:28 2014:	* -----|/-------------------------------------------------------------------- *
+Mon Sep 29 16:06:28 2014:	* Evaluating triggers...done
+Mon Sep 29 16:06:28 2014:	* Checking for available FET debuggers: 
+Mon Sep 29 16:06:28 2014:	* Found USB FET @ ttyACM0.Mon Sep 29 16:06:28 2014:	
+Mon Sep 29 16:06:28 2014:	* Initializing interface on TIUSB port...done
+Mon Sep 29 16:06:28 2014:	* Checking firmware compatibility: 
+Mon Sep 29 16:06:28 2014:	* FET firmware is up to date.
+Mon Sep 29 16:06:28 2014:	* Reading FW version...done
+Mon Sep 29 16:06:28 2014:	* Reading HW version...done
+Mon Sep 29 16:06:28 2014:	* Setting VCC to 3000 mV...done
+Mon Sep 29 16:06:29 2014:	* Accessing device...done
+Mon Sep 29 16:06:30 2014:	* Reading device information...done
+Mon Sep 29 16:06:30 2014:	* Loading file into device...done
+Mon Sep 29 16:06:32 2014:	* 
+Mon Sep 29 16:06:32 2014:	/* ---------------------------------------------------------------------------
+Mon Sep 29 16:06:32 2014:	* Arguments   : -n MSPF5438A -w build/symbmote/main.hex 
+Mon Sep 29 16:06:32 2014:	* Warning: Default options used due to incomplete argument list.
+Mon Sep 29 16:06:32 2014:	* ----------------------------------------------------------------------------
+Mon Sep 29 16:06:32 2014:	* Driver      : loaded
+Mon Sep 29 16:06:32 2014:	* Dll Version : 30400020
+Mon Sep 29 16:06:32 2014:	* FwVersion   : 30400020
+Mon Sep 29 16:06:32 2014:	* Interface   : TIUSB
+Mon Sep 29 16:06:32 2014:	* HwVersion   : U 1.40
+Mon Sep 29 16:06:32 2014:	* Mode        : AUTO
+Mon Sep 29 16:06:32 2014:	* Device      : MSP430F5438A
+Mon Sep 29 16:06:32 2014:	* EEM         : Level 7, ClockCntrl 2
+Mon Sep 29 16:06:32 2014:	* Prog.File   : build/symbmote/main.hex (ERASE_ALL, verified = FALSE)
+Mon Sep 29 16:06:32 2014:	* BSL Unlock  : FALSE
+Mon Sep 29 16:06:32 2014:	* InfoA Access: FALSE
+Mon Sep 29 16:06:32 2014:	* VCC ON      : 0 mV
+Mon Sep 29 16:06:32 2014:	* ----------------------------------------------------------------------------
+Mon Sep 29 16:06:32 2014:	* Powering down...done
+Mon Sep 29 16:06:32 2014:	* Disconnecting from device...done
+Mon Sep 29 16:06:34 2014:	* 
+Mon Sep 29 16:06:34 2014:	* ----------------------------------------------------------------------------
+Mon Sep 29 16:06:34 2014:	* Driver        : closed (EEM polling thread is already active)
+Mon Sep 29 16:06:34 2014:	* ----------------------------------------------------------------------------
+Mon Sep 29 16:06:34 2014:	*/
+Mon Sep 29 16:07:28 2014:	* -----/|-------------------------------------------------------------------- *
+Mon Sep 29 16:07:28 2014:	*     / |__                                                                   *
+Mon Sep 29 16:07:28 2014:	*    /_   /   MSP430 Flasher v1.3.0                                           *
+Mon Sep 29 16:07:28 2014:	*      | /                                                                    *
+Mon Sep 29 16:07:28 2014:	* -----|/-------------------------------------------------------------------- *
+Mon Sep 29 16:07:28 2014:	* Evaluating triggers...done
+Mon Sep 29 16:07:28 2014:	* Checking for available FET debuggers: 
+Mon Sep 29 16:07:28 2014:	* Found USB FET @ ttyACM0.Mon Sep 29 16:07:28 2014:	
+Mon Sep 29 16:07:28 2014:	* Initializing interface on TIUSB port...done
+Mon Sep 29 16:07:28 2014:	* Checking firmware compatibility: 
+Mon Sep 29 16:07:28 2014:	* FET firmware is up to date.
+Mon Sep 29 16:07:28 2014:	* Reading FW version...done
+Mon Sep 29 16:07:28 2014:	* Reading HW version...done
+Mon Sep 29 16:07:28 2014:	* Setting VCC to 3000 mV...done
+Mon Sep 29 16:07:29 2014:	* Accessing device...done
+Mon Sep 29 16:07:30 2014:	* Reading device information...done
+Mon Sep 29 16:07:30 2014:	* Loading file into device...done
+Mon Sep 29 16:07:32 2014:	* 
+Mon Sep 29 16:07:32 2014:	/* ---------------------------------------------------------------------------
+Mon Sep 29 16:07:32 2014:	* Arguments   : -n MSPF5438A -w build/symbmote/main.hex 
+Mon Sep 29 16:07:32 2014:	* Warning: Default options used due to incomplete argument list.
+Mon Sep 29 16:07:32 2014:	* ----------------------------------------------------------------------------
+Mon Sep 29 16:07:32 2014:	* Driver      : loaded
+Mon Sep 29 16:07:32 2014:	* Dll Version : 30400020
+Mon Sep 29 16:07:32 2014:	* FwVersion   : 30400020
+Mon Sep 29 16:07:32 2014:	* Interface   : TIUSB
+Mon Sep 29 16:07:32 2014:	* HwVersion   : U 1.40
+Mon Sep 29 16:07:32 2014:	* Mode        : AUTO
+Mon Sep 29 16:07:32 2014:	* Device      : MSP430F5438A
+Mon Sep 29 16:07:32 2014:	* EEM         : Level 7, ClockCntrl 2
+Mon Sep 29 16:07:32 2014:	* Prog.File   : build/symbmote/main.hex (ERASE_ALL, verified = FALSE)
+Mon Sep 29 16:07:32 2014:	* BSL Unlock  : FALSE
+Mon Sep 29 16:07:32 2014:	* InfoA Access: FALSE
+Mon Sep 29 16:07:32 2014:	* VCC ON      : 0 mV
+Mon Sep 29 16:07:32 2014:	* ----------------------------------------------------------------------------
+Mon Sep 29 16:07:32 2014:	* Powering down...done
+Mon Sep 29 16:07:32 2014:	* Disconnecting from device...done
+Mon Sep 29 16:07:34 2014:	* 
+Mon Sep 29 16:07:34 2014:	* ----------------------------------------------------------------------------
+Mon Sep 29 16:07:34 2014:	* Driver        : closed (EEM polling thread is already active)
+Mon Sep 29 16:07:34 2014:	* ----------------------------------------------------------------------------
+Mon Sep 29 16:07:34 2014:	*/
+Mon Sep 29 16:12:22 2014:	* -----/|-------------------------------------------------------------------- *
+Mon Sep 29 16:12:22 2014:	*     / |__                                                                   *
+Mon Sep 29 16:12:22 2014:	*    /_   /   MSP430 Flasher v1.3.0                                           *
+Mon Sep 29 16:12:22 2014:	*      | /                                                                    *
+Mon Sep 29 16:12:22 2014:	* -----|/-------------------------------------------------------------------- *
+Mon Sep 29 16:12:22 2014:	* Evaluating triggers...done
+Mon Sep 29 16:12:22 2014:	* Checking for available FET debuggers: 
+Mon Sep 29 16:12:22 2014:	* Found USB FET @ ttyACM0.Mon Sep 29 16:12:22 2014:	
+Mon Sep 29 16:12:22 2014:	* Initializing interface on TIUSB port...done
+Mon Sep 29 16:12:22 2014:	* Checking firmware compatibility: 
+Mon Sep 29 16:12:22 2014:	* FET firmware is up to date.
+Mon Sep 29 16:12:22 2014:	* Reading FW version...done
+Mon Sep 29 16:12:22 2014:	* Reading HW version...done
+Mon Sep 29 16:12:22 2014:	* Setting VCC to 3000 mV...done
+Mon Sep 29 16:12:23 2014:	* Accessing device...done
+Mon Sep 29 16:12:24 2014:	* Reading device information...done
+Mon Sep 29 16:12:24 2014:	* Loading file into device...done
+Mon Sep 29 16:12:26 2014:	* 
+Mon Sep 29 16:12:26 2014:	/* ---------------------------------------------------------------------------
+Mon Sep 29 16:12:26 2014:	* Arguments   : -n MSPF5438A -w build/symbmote/main.hex 
+Mon Sep 29 16:12:26 2014:	* Warning: Default options used due to incomplete argument list.
+Mon Sep 29 16:12:26 2014:	* ----------------------------------------------------------------------------
+Mon Sep 29 16:12:26 2014:	* Driver      : loaded
+Mon Sep 29 16:12:26 2014:	* Dll Version : 30400020
+Mon Sep 29 16:12:26 2014:	* FwVersion   : 30400020
+Mon Sep 29 16:12:26 2014:	* Interface   : TIUSB
+Mon Sep 29 16:12:26 2014:	* HwVersion   : U 1.40
+Mon Sep 29 16:12:26 2014:	* Mode        : AUTO
+Mon Sep 29 16:12:26 2014:	* Device      : MSP430F5438A
+Mon Sep 29 16:12:26 2014:	* EEM         : Level 7, ClockCntrl 2
+Mon Sep 29 16:12:26 2014:	* Prog.File   : build/symbmote/main.hex (ERASE_ALL, verified = FALSE)
+Mon Sep 29 16:12:26 2014:	* BSL Unlock  : FALSE
+Mon Sep 29 16:12:26 2014:	* InfoA Access: FALSE
+Mon Sep 29 16:12:26 2014:	* VCC ON      : 0 mV
+Mon Sep 29 16:12:26 2014:	* ----------------------------------------------------------------------------
+Mon Sep 29 16:12:26 2014:	* Powering down...done
+Mon Sep 29 16:12:27 2014:	* Disconnecting from device...done
+Mon Sep 29 16:12:28 2014:	* 
+Mon Sep 29 16:12:28 2014:	* ----------------------------------------------------------------------------
+Mon Sep 29 16:12:28 2014:	* Driver        : closed (EEM polling thread is already active)
+Mon Sep 29 16:12:28 2014:	* ----------------------------------------------------------------------------
+Mon Sep 29 16:12:28 2014:	*/
+Mon Sep 29 16:26:52 2014:	* -----/|-------------------------------------------------------------------- *
+Mon Sep 29 16:26:52 2014:	*     / |__                                                                   *
+Mon Sep 29 16:26:52 2014:	*    /_   /   MSP430 Flasher v1.3.0                                           *
+Mon Sep 29 16:26:52 2014:	*      | /                                                                    *
+Mon Sep 29 16:26:52 2014:	* -----|/-------------------------------------------------------------------- *
+Mon Sep 29 16:26:52 2014:	* Evaluating triggers...done
+Mon Sep 29 16:26:52 2014:	* Checking for available FET debuggers: 
+Mon Sep 29 16:26:52 2014:	* Found USB FET @ ttyACM0.Mon Sep 29 16:26:52 2014:	
+Mon Sep 29 16:26:52 2014:	* Initializing interface on TIUSB port...done
+Mon Sep 29 16:26:53 2014:	* Checking firmware compatibility: 
+Mon Sep 29 16:26:53 2014:	* FET firmware is up to date.
+Mon Sep 29 16:26:53 2014:	* Reading FW version...done
+Mon Sep 29 16:26:53 2014:	* Reading HW version...done
+Mon Sep 29 16:26:53 2014:	* Setting VCC to 3000 mV...done
+Mon Sep 29 16:26:54 2014:	* Accessing device...done
+Mon Sep 29 16:26:54 2014:	* Reading device information...done
+Mon Sep 29 16:26:54 2014:	* Loading file into device...done
+Mon Sep 29 16:26:56 2014:	* 
+Mon Sep 29 16:26:56 2014:	/* ---------------------------------------------------------------------------
+Mon Sep 29 16:26:56 2014:	* Arguments   : -n MSPF5438A -w build/symbmote/main.hex 
+Mon Sep 29 16:26:56 2014:	* Warning: Default options used due to incomplete argument list.
+Mon Sep 29 16:26:56 2014:	* ----------------------------------------------------------------------------
+Mon Sep 29 16:26:56 2014:	* Driver      : loaded
+Mon Sep 29 16:26:56 2014:	* Dll Version : 30400020
+Mon Sep 29 16:26:56 2014:	* FwVersion   : 30400020
+Mon Sep 29 16:26:56 2014:	* Interface   : TIUSB
+Mon Sep 29 16:26:56 2014:	* HwVersion   : U 1.40
+Mon Sep 29 16:26:56 2014:	* Mode        : AUTO
+Mon Sep 29 16:26:56 2014:	* Device      : MSP430F5438A
+Mon Sep 29 16:26:56 2014:	* EEM         : Level 7, ClockCntrl 2
+Mon Sep 29 16:26:56 2014:	* Prog.File   : build/symbmote/main.hex (ERASE_ALL, verified = FALSE)
+Mon Sep 29 16:26:56 2014:	* BSL Unlock  : FALSE
+Mon Sep 29 16:26:56 2014:	* InfoA Access: FALSE
+Mon Sep 29 16:26:56 2014:	* VCC ON      : 0 mV
+Mon Sep 29 16:26:56 2014:	* ----------------------------------------------------------------------------
+Mon Sep 29 16:26:56 2014:	* Powering down...done
+Mon Sep 29 16:26:57 2014:	* Disconnecting from device...done
+Mon Sep 29 16:26:58 2014:	* 
+Mon Sep 29 16:26:58 2014:	* ----------------------------------------------------------------------------
+Mon Sep 29 16:26:58 2014:	* Driver        : closed (EEM polling thread is already active)
+Mon Sep 29 16:26:58 2014:	* ----------------------------------------------------------------------------
+Mon Sep 29 16:26:58 2014:	*/
+Tue Sep 30 00:24:14 2014:	* -----/|-------------------------------------------------------------------- *
+Tue Sep 30 00:24:14 2014:	*     / |__                                                                   *
+Tue Sep 30 00:24:14 2014:	*    /_   /   MSP430 Flasher v1.3.0                                           *
+Tue Sep 30 00:24:14 2014:	*      | /                                                                    *
+Tue Sep 30 00:24:14 2014:	* -----|/-------------------------------------------------------------------- *
+Tue Sep 30 00:24:14 2014:	* Evaluating triggers...done
+Tue Sep 30 00:24:14 2014:	* Checking for available FET debuggers: 
+Tue Sep 30 00:24:14 2014:	* Found USB FET @ ttyACM0.Tue Sep 30 00:24:14 2014:	
+Tue Sep 30 00:24:14 2014:	* Initializing interface on TIUSB port...done
+Tue Sep 30 00:24:15 2014:	* Checking firmware compatibility: 
+Tue Sep 30 00:24:15 2014:	* FET firmware is up to date.
+Tue Sep 30 00:24:15 2014:	* Reading FW version...done
+Tue Sep 30 00:24:15 2014:	* Reading HW version...done
+Tue Sep 30 00:24:15 2014:	* Setting VCC to 3000 mV...done
+Tue Sep 30 00:24:16 2014:	* Accessing device...done
+Tue Sep 30 00:24:16 2014:	* Reading device information...done
+Tue Sep 30 00:24:16 2014:	* Loading file into device...done
+Tue Sep 30 00:24:18 2014:	* 
+Tue Sep 30 00:24:18 2014:	/* ---------------------------------------------------------------------------
+Tue Sep 30 00:24:18 2014:	* Arguments   : -n MSPF5438A -w build/symbmote/main.hex 
+Tue Sep 30 00:24:18 2014:	* Warning: Default options used due to incomplete argument list.
+Tue Sep 30 00:24:18 2014:	* ----------------------------------------------------------------------------
+Tue Sep 30 00:24:18 2014:	* Driver      : loaded
+Tue Sep 30 00:24:18 2014:	* Dll Version : 30400020
+Tue Sep 30 00:24:18 2014:	* FwVersion   : 30400020
+Tue Sep 30 00:24:18 2014:	* Interface   : TIUSB
+Tue Sep 30 00:24:18 2014:	* HwVersion   : U 1.40
+Tue Sep 30 00:24:18 2014:	* Mode        : AUTO
+Tue Sep 30 00:24:18 2014:	* Device      : MSP430F5438A
+Tue Sep 30 00:24:18 2014:	* EEM         : Level 7, ClockCntrl 2
+Tue Sep 30 00:24:18 2014:	* Prog.File   : build/symbmote/main.hex (ERASE_ALL, verified = FALSE)
+Tue Sep 30 00:24:18 2014:	* BSL Unlock  : FALSE
+Tue Sep 30 00:24:18 2014:	* InfoA Access: FALSE
+Tue Sep 30 00:24:18 2014:	* VCC ON      : 0 mV
+Tue Sep 30 00:24:18 2014:	* ----------------------------------------------------------------------------
+Tue Sep 30 00:24:18 2014:	* Powering down...done
+Tue Sep 30 00:24:19 2014:	* Disconnecting from device...done
+Tue Sep 30 00:24:20 2014:	* 
+Tue Sep 30 00:24:20 2014:	* ----------------------------------------------------------------------------
+Tue Sep 30 00:24:20 2014:	* Driver        : closed (EEM polling thread is already active)
+Tue Sep 30 00:24:20 2014:	* ----------------------------------------------------------------------------
+Tue Sep 30 00:24:20 2014:	*/
+Tue Sep 30 00:24:37 2014:	* -----/|-------------------------------------------------------------------- *
+Tue Sep 30 00:24:37 2014:	*     / |__                                                                   *
+Tue Sep 30 00:24:37 2014:	*    /_   /   MSP430 Flasher v1.3.0                                           *
+Tue Sep 30 00:24:37 2014:	*      | /                                                                    *
+Tue Sep 30 00:24:37 2014:	* -----|/-------------------------------------------------------------------- *
+Tue Sep 30 00:24:37 2014:	* Evaluating triggers...done
+Tue Sep 30 00:24:37 2014:	* Checking for available FET debuggers: 
+Tue Sep 30 00:24:37 2014:	* Found USB FET @ ttyACM0.Tue Sep 30 00:24:37 2014:	
+Tue Sep 30 00:24:37 2014:	* Initializing interface on TIUSB port...done
+Tue Sep 30 00:24:38 2014:	* Checking firmware compatibility: 
+Tue Sep 30 00:24:38 2014:	* FET firmware is up to date.
+Tue Sep 30 00:24:38 2014:	* Reading FW version...done
+Tue Sep 30 00:24:38 2014:	* Reading HW version...done
+Tue Sep 30 00:24:38 2014:	* Setting VCC to 3000 mV...done
+Tue Sep 30 00:24:39 2014:	* Accessing device...done
+Tue Sep 30 00:24:39 2014:	* Reading device information...done
+Tue Sep 30 00:24:39 2014:	* Loading file into device...done
+Tue Sep 30 00:24:41 2014:	* 
+Tue Sep 30 00:24:41 2014:	/* ---------------------------------------------------------------------------
+Tue Sep 30 00:24:41 2014:	* Arguments   : -n MSPF5438A -w build/symbmote/main.hex 
+Tue Sep 30 00:24:41 2014:	* Warning: Default options used due to incomplete argument list.
+Tue Sep 30 00:24:41 2014:	* ----------------------------------------------------------------------------
+Tue Sep 30 00:24:41 2014:	* Driver      : loaded
+Tue Sep 30 00:24:41 2014:	* Dll Version : 30400020
+Tue Sep 30 00:24:41 2014:	* FwVersion   : 30400020
+Tue Sep 30 00:24:41 2014:	* Interface   : TIUSB
+Tue Sep 30 00:24:41 2014:	* HwVersion   : U 1.40
+Tue Sep 30 00:24:41 2014:	* Mode        : AUTO
+Tue Sep 30 00:24:41 2014:	* Device      : MSP430F5438A
+Tue Sep 30 00:24:41 2014:	* EEM         : Level 7, ClockCntrl 2
+Tue Sep 30 00:24:41 2014:	* Prog.File   : build/symbmote/main.hex (ERASE_ALL, verified = FALSE)
+Tue Sep 30 00:24:41 2014:	* BSL Unlock  : FALSE
+Tue Sep 30 00:24:41 2014:	* InfoA Access: FALSE
+Tue Sep 30 00:24:41 2014:	* VCC ON      : 0 mV
+Tue Sep 30 00:24:41 2014:	* ----------------------------------------------------------------------------
+Tue Sep 30 00:24:41 2014:	* Powering down...done
+Tue Sep 30 00:24:42 2014:	* Disconnecting from device...done
+Tue Sep 30 00:24:43 2014:	* 
+Tue Sep 30 00:24:43 2014:	* ----------------------------------------------------------------------------
+Tue Sep 30 00:24:43 2014:	* Driver        : closed (EEM polling thread is already active)
+Tue Sep 30 00:24:43 2014:	* ----------------------------------------------------------------------------
+Tue Sep 30 00:24:43 2014:	*/
+Tue Sep 30 00:25:09 2014:	* -----/|-------------------------------------------------------------------- *
+Tue Sep 30 00:25:09 2014:	*     / |__                                                                   *
+Tue Sep 30 00:25:09 2014:	*    /_   /   MSP430 Flasher v1.3.0                                           *
+Tue Sep 30 00:25:09 2014:	*      | /                                                                    *
+Tue Sep 30 00:25:09 2014:	* -----|/-------------------------------------------------------------------- *
+Tue Sep 30 00:25:09 2014:	* Evaluating triggers...done
+Tue Sep 30 00:25:09 2014:	* Checking for available FET debuggers: 
+Tue Sep 30 00:25:09 2014:	* Found USB FET @ ttyACM0.Tue Sep 30 00:25:09 2014:	
+Tue Sep 30 00:25:09 2014:	* Initializing interface on TIUSB port...done
+Tue Sep 30 00:25:10 2014:	* Checking firmware compatibility: 
+Tue Sep 30 00:25:10 2014:	* FET firmware is up to date.
+Tue Sep 30 00:25:10 2014:	* Reading FW version...done
+Tue Sep 30 00:25:10 2014:	* Reading HW version...done
+Tue Sep 30 00:25:10 2014:	* Setting VCC to 3000 mV...done
+Tue Sep 30 00:25:11 2014:	* Accessing device...done
+Tue Sep 30 00:25:14 2014:	* Reading device information...done
+Tue Sep 30 00:25:14 2014:	* Loading file into device...
+Tue Sep 30 00:25:22 2014:	* ERROR : Could not erase device memory
+Tue Sep 30 00:25:22 2014:	* Unable to load file.
+Tue Sep 30 00:25:22 2014:	# Exit: 10
+Tue Sep 30 00:25:22 2014:	# ERROR: Could not reset device
+Tue Sep 30 00:25:22 2014:	* Disconnecting from device...done
+Tue Sep 30 00:25:23 2014:	* 
+Tue Sep 30 00:25:23 2014:	* ----------------------------------------------------------------------------
+Tue Sep 30 00:25:23 2014:	* Driver        : closed (No error)
+Tue Sep 30 00:25:23 2014:	* ----------------------------------------------------------------------------
+Tue Sep 30 00:25:23 2014:	*/
+Tue Sep 30 00:28:58 2014:	* -----/|-------------------------------------------------------------------- *
+Tue Sep 30 00:28:58 2014:	*     / |__                                                                   *
+Tue Sep 30 00:28:58 2014:	*    /_   /   MSP430 Flasher v1.3.0                                           *
+Tue Sep 30 00:28:58 2014:	*      | /                                                                    *
+Tue Sep 30 00:28:58 2014:	* -----|/-------------------------------------------------------------------- *
+Tue Sep 30 00:28:58 2014:	* Evaluating triggers...done
+Tue Sep 30 00:28:58 2014:	* Checking for available FET debuggers: 
+Tue Sep 30 00:28:58 2014:	* Found USB FET @ ttyACM0.Tue Sep 30 00:28:58 2014:	
+Tue Sep 30 00:28:58 2014:	* Initializing interface on TIUSB port...
+Tue Sep 30 00:28:58 2014:	# Exit: 19
+Tue Sep 30 00:28:58 2014:	# ERROR: Interface Communication error
+Tue Sep 30 00:28:58 2014:	* Disconnecting from device...done
+Tue Sep 30 00:28:58 2014:	* 
+Tue Sep 30 00:28:58 2014:	* ----------------------------------------------------------------------------
+Tue Sep 30 00:28:58 2014:	* Driver        : closed (No error)
+Tue Sep 30 00:28:58 2014:	* ----------------------------------------------------------------------------
+Tue Sep 30 00:28:58 2014:	*/
+Tue Sep 30 00:29:05 2014:	* -----/|-------------------------------------------------------------------- *
+Tue Sep 30 00:29:05 2014:	*     / |__                                                                   *
+Tue Sep 30 00:29:05 2014:	*    /_   /   MSP430 Flasher v1.3.0                                           *
+Tue Sep 30 00:29:05 2014:	*      | /                                                                    *
+Tue Sep 30 00:29:05 2014:	* -----|/-------------------------------------------------------------------- *
+Tue Sep 30 00:29:05 2014:	* Evaluating triggers...done
+Tue Sep 30 00:29:05 2014:	* Checking for available FET debuggers: 
+Tue Sep 30 00:29:05 2014:	* Found USB FET @ ttyACM0.Tue Sep 30 00:29:05 2014:	
+Tue Sep 30 00:29:05 2014:	* Initializing interface on TIUSB port...done
+Tue Sep 30 00:29:05 2014:	* Checking firmware compatibility: 
+Tue Sep 30 00:29:05 2014:	* FET firmware is up to date.
+Tue Sep 30 00:29:05 2014:	* Reading FW version...done
+Tue Sep 30 00:29:05 2014:	* Reading HW version...done
+Tue Sep 30 00:29:05 2014:	* Setting VCC to 3000 mV...done
+Tue Sep 30 00:29:06 2014:	* Accessing device...done
+Tue Sep 30 00:29:07 2014:	* Reading device information...done
+Tue Sep 30 00:29:07 2014:	* Loading file into device...done
+Tue Sep 30 00:29:09 2014:	* 
+Tue Sep 30 00:29:09 2014:	/* ---------------------------------------------------------------------------
+Tue Sep 30 00:29:09 2014:	* Arguments   : -n MSPF5438A -w build/symbmote/main.hex 
+Tue Sep 30 00:29:09 2014:	* Warning: Default options used due to incomplete argument list.
+Tue Sep 30 00:29:09 2014:	* ----------------------------------------------------------------------------
+Tue Sep 30 00:29:09 2014:	* Driver      : loaded
+Tue Sep 30 00:29:09 2014:	* Dll Version : 30400020
+Tue Sep 30 00:29:09 2014:	* FwVersion   : 30400020
+Tue Sep 30 00:29:09 2014:	* Interface   : TIUSB
+Tue Sep 30 00:29:09 2014:	* HwVersion   : U 1.40
+Tue Sep 30 00:29:09 2014:	* Mode        : AUTO
+Tue Sep 30 00:29:09 2014:	* Device      : MSP430F5438A
+Tue Sep 30 00:29:09 2014:	* EEM         : Level 7, ClockCntrl 2
+Tue Sep 30 00:29:09 2014:	* Prog.File   : build/symbmote/main.hex (ERASE_ALL, verified = FALSE)
+Tue Sep 30 00:29:09 2014:	* BSL Unlock  : FALSE
+Tue Sep 30 00:29:09 2014:	* InfoA Access: FALSE
+Tue Sep 30 00:29:09 2014:	* VCC ON      : 0 mV
+Tue Sep 30 00:29:09 2014:	* ----------------------------------------------------------------------------
+Tue Sep 30 00:29:09 2014:	* Powering down...done
+Tue Sep 30 00:29:10 2014:	* Disconnecting from device...done
+Tue Sep 30 00:29:13 2014:	* 
+Tue Sep 30 00:29:13 2014:	* ----------------------------------------------------------------------------
+Tue Sep 30 00:29:13 2014:	* Driver        : closed (EEM polling thread is already active)
+Tue Sep 30 00:29:13 2014:	* ----------------------------------------------------------------------------
+Tue Sep 30 00:29:13 2014:	*/
+Tue Sep 30 00:31:20 2014:	* -----/|-------------------------------------------------------------------- *
+Tue Sep 30 00:31:20 2014:	*     / |__                                                                   *
+Tue Sep 30 00:31:20 2014:	*    /_   /   MSP430 Flasher v1.3.0                                           *
+Tue Sep 30 00:31:20 2014:	*      | /                                                                    *
+Tue Sep 30 00:31:20 2014:	* -----|/-------------------------------------------------------------------- *
+Tue Sep 30 00:31:20 2014:	* Evaluating triggers...done
+Tue Sep 30 00:31:20 2014:	* Checking for available FET debuggers: 
+Tue Sep 30 00:31:20 2014:	* Found USB FET @ ttyACM0.Tue Sep 30 00:31:20 2014:	
+Tue Sep 30 00:31:20 2014:	* Initializing interface on TIUSB port...done
+Tue Sep 30 00:31:20 2014:	* Checking firmware compatibility: 
+Tue Sep 30 00:31:20 2014:	* FET firmware is up to date.
+Tue Sep 30 00:31:20 2014:	* Reading FW version...done
+Tue Sep 30 00:31:20 2014:	* Reading HW version...done
+Tue Sep 30 00:31:20 2014:	* Setting VCC to 3000 mV...done
+Tue Sep 30 00:31:21 2014:	* Accessing device...done
+Tue Sep 30 00:31:22 2014:	* Reading device information...done
+Tue Sep 30 00:31:22 2014:	* Loading file into device...done
+Tue Sep 30 00:31:24 2014:	* 
+Tue Sep 30 00:31:24 2014:	/* ---------------------------------------------------------------------------
+Tue Sep 30 00:31:24 2014:	* Arguments   : -n MSPF5438A -w build/symbmote/main.hex 
+Tue Sep 30 00:31:24 2014:	* Warning: Default options used due to incomplete argument list.
+Tue Sep 30 00:31:24 2014:	* ----------------------------------------------------------------------------
+Tue Sep 30 00:31:24 2014:	* Driver      : loaded
+Tue Sep 30 00:31:24 2014:	* Dll Version : 30400020
+Tue Sep 30 00:31:24 2014:	* FwVersion   : 30400020
+Tue Sep 30 00:31:24 2014:	* Interface   : TIUSB
+Tue Sep 30 00:31:24 2014:	* HwVersion   : U 1.40
+Tue Sep 30 00:31:24 2014:	* Mode        : AUTO
+Tue Sep 30 00:31:24 2014:	* Device      : MSP430F5438A
+Tue Sep 30 00:31:24 2014:	* EEM         : Level 7, ClockCntrl 2
+Tue Sep 30 00:31:24 2014:	* Prog.File   : build/symbmote/main.hex (ERASE_ALL, verified = FALSE)
+Tue Sep 30 00:31:24 2014:	* BSL Unlock  : FALSE
+Tue Sep 30 00:31:24 2014:	* InfoA Access: FALSE
+Tue Sep 30 00:31:24 2014:	* VCC ON      : 0 mV
+Tue Sep 30 00:31:24 2014:	* ----------------------------------------------------------------------------
+Tue Sep 30 00:31:24 2014:	* Powering down...done
+Tue Sep 30 00:31:25 2014:	* Disconnecting from device...done
+Tue Sep 30 00:31:26 2014:	* 
+Tue Sep 30 00:31:26 2014:	* ----------------------------------------------------------------------------
+Tue Sep 30 00:31:26 2014:	* Driver        : closed (EEM polling thread is already active)
+Tue Sep 30 00:31:26 2014:	* ----------------------------------------------------------------------------
+Tue Sep 30 00:31:26 2014:	*/

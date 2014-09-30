@@ -27,6 +27,7 @@ tinyos/misc/.deps/
 tinyos/misc/tos-build-deluge-image
 tinyos/misc/tos-check-env
 tinyos/misc/tos-deluge
+tinyos/misc/sym-deluge
 tinyos/misc/tos-dump.py
 tinyos/misc/tos-ident-flags
 tinyos/misc/tos-install-jni

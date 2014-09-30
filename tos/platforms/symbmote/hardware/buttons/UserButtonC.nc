@@ -49,14 +49,14 @@
 #include <UserButton.h>
 
 configuration UserButtonC {
-  provides interface Get<button_state_t>;
+  provides interface Get<button_state_t> ;
   provides interface Notify<button_state_t>;
 }
 implementation {
   components HplUserButtonC;
   components new SwitchToggleC();
-  SwitchToggleC.GpioInterrupt -> HplUserButtonC.GpioInterrupt;
-  SwitchToggleC.HplMsp430GeneralIO -> HplUserButtonC.HplMsp430GeneralIO;
+  SwitchToggleC.GpioInterrupt -> HplUserButtonC;
+  SwitchToggleC.HplMsp430GeneralIO -> HplUserButtonC;
 
   components UserButtonP;
   Get = UserButtonP;

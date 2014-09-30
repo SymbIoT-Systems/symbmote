@@ -87,7 +87,7 @@ implementation {
       if (call Packet.maxPayloadLength() < sizeof(test_serial_msg_t)) {
 	return;
       }
-
+      call Leds.led0Toggle();
       rcm->counter = counter;
       if (call AMSend.send(AM_BROADCAST_ADDR, &packet, sizeof(test_serial_msg_t)) == SUCCESS) {
 	locked = TRUE;

@@ -55,7 +55,7 @@ configuration PlatformSerialC {
     interface StdControl;
     interface UartStream;
     interface UartByte;
-    interface UartByte as UartByte1;
+    //interface UartByte as UartByte1;
     interface Msp430UsciError;
   }
 }
@@ -65,16 +65,16 @@ implementation {
   components PlatformSerialP;
   StdControl = PlatformSerialP;
 
-  components new Msp430UsciUartA0C() as UartC;
-  components new Msp430UsciUartA1C() as Uart1C;
+  components new Msp430UsciUartA1C() as UartC;
+  //components new Msp430UsciUartA1C() as Uart1C;
 
   UartStream = UartC;
   UartByte = UartC;
   Msp430UsciError = UartC;
   PlatformSerialP.Resource -> UartC.Resource;
 
-  UartStream=Uart1C;
-  UartByte1=Uart1C;
-  Msp430UsciError=Uart1C;
-  PlatformSerialP.Resource -> Uart1C.Resource;
+  //UartStream=Uart1C;
+  //UartByte1=Uart1C;
+  //Msp430UsciError=Uart1C;
+  //PlatformSerialP.Resource -> Uart1C.Resource;
 }

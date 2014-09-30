@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2009-2010 People Power Co.
+ * Copyright (c) 2007 Arch Rock Corporation
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -30,37 +30,67 @@
  * STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
  * ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED
  * OF THE POSSIBILITY OF SUCH DAMAGE.
- *
- * @author Peter A. Bigot <pab@peoplepowerco.com>
  */
 
-#include "hardware.h"
+/**
+ * Not quite generic layer to translate a GIO into a toggle switch
+ * (Newer MSP430 chips require configuring pull-up resistor, function
+ * is not available in generic GeneralIO.)
+ *
+ * @author Gilman Tolle <gtolle@archrock.com>
+ * @author Peter A. Bigot <pab@peoplepowerco.com>
+ * @author Eric B. Decker <cire831@gmail.com>
+ */
 
-configuration PlatformLedsC {
-  provides {
-    interface Init;
-    interface Leds;
-  }
+#include <UserButton.h>
+
+generic module SwitchToggleC() {
+  provides interface Get<bool>;
+  provides interface Notify<bool>;
+
+  uses interface HplMsp430GeneralIO;
+  uses interface GpioInterrupt;
 }
 implementation {
-  components PlatformLedsP;
-  Leds = PlatformLedsP;
-  Init = PlatformLedsP;
+  norace bool m_pinHigh;
 
-  components HplMsp430GeneralIOC as GeneralIOC;
+  task void sendEvent();
 
-  /* RED LED (D1) at P4.7 */
-  components new Msp430GpioC() as Led0Impl;
-  Led0Impl -> GeneralIOC.Port47;
-  PlatformLedsP.Led0 -> Led0Impl;
+  command bool Get.get() { return call HplMsp430GeneralIO.get(); }
 
-  /* Yellow LED (D2) at P4.6 */
-  components new Msp430GpioC() as Led1Impl;
-  Led1Impl -> GeneralIOC.Port54;
-  PlatformLedsP.Led1 -> Led1Impl;
+  command error_t Notify.enable() {
+    error_t rv;
 
- /* Green LED (D1) at P4.5 */
-  components new Msp430GpioC() as Led2Impl;
-  Led2Impl -> GeneralIOC.Port55;
-  PlatformLedsP.Led2 -> Led2Impl;
+    call HplMsp430GeneralIO.makeInput();
+    call HplMsp430GeneralIO.setResistor(MSP430_PORT_RESISTOR_PULLUP);
+    if ( call HplMsp430GeneralIO.get() ) {
+      m_pinHigh = TRUE;
+      return call GpioInterrupt.enableFallingEdge();
+    } else {
+      m_pinHigh = FALSE;
+      return call GpioInterrupt.enableRisingEdge();
+    }
+  }
+
+  command error_t Notify.disable() {
+    return call GpioInterrupt.disable();
+  }
+
+  async event void GpioInterrupt.fired() {
+    call GpioInterrupt.disable();
+
+    m_pinHigh = !m_pinHigh;
+
+    post sendEvent();
+  }
+
+  task void sendEvent() {
+    bool pinHigh;
+    pinHigh = m_pinHigh;
+    signal Notify.notify( pinHigh );
+    if ( pinHigh )
+      call GpioInterrupt.enableFallingEdge();
+    else
+      call GpioInterrupt.enableRisingEdge();
+  }
 }

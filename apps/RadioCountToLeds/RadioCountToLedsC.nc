@@ -79,7 +79,7 @@ implementation {
 
   event void AMControl.startDone(error_t err) {
     if (err == SUCCESS) {
-      call MilliTimer.startPeriodic(250);
+      call MilliTimer.startPeriodic(1000);
     }
     else {
       call AMControl.start();
@@ -141,7 +141,6 @@ implementation {
   event void AMSend.sendDone(message_t* bufPtr, error_t error) {
     if (&packet == bufPtr) {
       locked = FALSE;
-      call UartByte.send('a');
     }
   }
 

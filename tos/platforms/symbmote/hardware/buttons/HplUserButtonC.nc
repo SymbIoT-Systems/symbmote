@@ -56,6 +56,6 @@ implementation {
   HplMsp430GeneralIO = GeneralIOC.Port106;
 
   components new Msp430InterruptC() as InterruptUserButtonC;
-  InterruptUserButtonC.HplInterrupt -> InterruptC.Port106;
+  InterruptUserButtonC.HplInterrupt -> InterruptC.Port27;
   GpioInterrupt = InterruptUserButtonC.Interrupt;
 }
