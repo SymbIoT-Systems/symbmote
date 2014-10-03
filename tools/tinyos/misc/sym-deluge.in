@@ -51,8 +51,10 @@ import os
 import sys
 from time import sleep
 
-motepath = "serial@/dev/ttyUSB0:115200"
-basecommand = "tos-deluge " + motepath
+
+motepath = os.getenv('motepath', "/dev/ttyUSB0")
+serialpath = "serial@"+motepath+":115200"
+basecommand = "tos-deluge " + serialpath
 
 def usage():
 	print "Usage: sym-deluge <command> <parameters>\n"
@@ -61,12 +63,22 @@ def usage():
 	print "switch <slot number>"
 	print "listen"
 
+def radiostate(state):
+	print "Changing radiostate\n"
+	os.system(basecommand + " -sr " + str(state))
+	sleep(2)
+
+
 if len(sys.argv) >= 2:
 
 	if sys.argv[1]=="ping":
 		if len(sys.argv) == 3:
+			radiostate(0)
+			
 			nodeid = sys.argv[2]
 			os.system(basecommand + " -pr " + nodeid)
+
+			radiostate(1)
 		else:
 			usage()
 
@@ -86,28 +98,31 @@ if len(sys.argv) >= 2:
 			sleep(2)
 			
 			print "Calling stopradio\n" #Stopping radio while flashing/injecting new image
-			os.system(basecommand + " -sr" + " 0")
-			sleep(2)
+			radiostate(0)
+
 			print "Injecting into Basestation\n"
 			os.system(basecommand + " -i " + slot + " " + filename)
-
 			sleep(2)
 
 			print "Flashing remote nodes\n"
 			os.system(basecommand + " -dr " + slot)
-
 			sleep(10)
 			
 			print "Restarting Radio\n" #Restart radio
-			os.system(basecommand + " -sr" + " 1")
-			sleep(2)
+			radiostate(1)
+
 		else:
 			usage()
 
 	elif sys.argv[1]=="switch":
 		if len(sys.argv) == 3:
+			radiostate(0)
+			
 			slot = sys.argv[2]
 			os.system(basecommand + " -dr " + slot)
+		
+			radiostate(1)
+		
 		else:
 			usage()
 			

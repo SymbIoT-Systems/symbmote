@@ -1,6 +1,7 @@
 #-*-Makefile-*- vim:syntax=make
 
 PFLAGS += -I%T/platforms/symbmote
+PFLAGS += -I%T/platforms/symbmote/hardware/stm25p
 PFLAGS += -I%T/platforms/symbmote/hardware/adc
 PFLAGS += -I%T/platforms/symbmote/hardware/buttons
 PFLAGS += -I%T/platforms/symbmote/hardware/cc2520
@@ -23,7 +24,7 @@ PFLAGS += -I%T/chips/msp430/pins
 PFLAGS += -I%T/chips/msp430/timer
 
 PFLAGS += -I%T/chips/msp430/adc12
-
+PFLAGS += -I%T/chips/stm25p
 PFLAGS += -I%T/chips/cc2520-v2
 
 PFLAGS += -I%T/lib/timer
@@ -35,6 +36,7 @@ PFLAGS += -I%T/lib/rfxlink/layers
 PFLAGS += -I%T/lib/rfxlink/util
 
 PFLAGS += -I%T/lib/diagmsg
+#PFLAGS += -I%T/lib/onewire
 
 PFLAGS += -mmcu=msp430f5438a
 PFLAGS += -fnesc-target=msp430
@@ -64,3 +66,5 @@ PFLAGS += -fnesc-no-debug
 #    "underscore_name=false " .
 #    "__builtin_va_list=true " .
 #    "__thread_is_keyword=true";
+
+TOSMAKE_FLASH_CHIP = stm25p

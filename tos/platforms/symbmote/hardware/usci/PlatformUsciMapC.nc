@@ -64,4 +64,11 @@ configuration PlatformUsciMapC {
   SpiB0C.CLK      -> GIO.UCB0CLK;
   SpiB0C.Platform -> PlatformC;
   SpiB0C.Panic    -> PanicC;
+
+  components Msp430UsciSpiA1P as SpiA1C;
+  SpiA1C.SIMO     -> GIO.UCA1SIMO;
+  SpiA1C.SOMI     -> GIO.UCA1SOMI;
+  SpiA1C.CLK      -> GIO.UCA1CLK;
+  SpiA1C.Platform -> PlatformC;
+  SpiA1C.Panic    -> PanicC;
 }
