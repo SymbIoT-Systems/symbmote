@@ -503,7 +503,7 @@ if len(sys.argv) >= 3:
 
     elif sys.argv[2] in ["-sr","--stopradio"]:
         if stopradio(int(sys.argv[3])):
-            print "Command sent"
+            print "Changed"
     else:
         print_usage()
 
