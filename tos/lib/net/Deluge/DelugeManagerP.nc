@@ -63,12 +63,13 @@ implementation
   
   typedef nx_struct SerialReplyPacket {
     nx_uint8_t error;
+    nx_uint8_t nodeid;
   } SerialReplyPacket;
 
   message_t serialMsg;
   DelugeCmd delugeCmd;
 
-  void sendReply(error_t error)
+  void sendReply(error_t error,uint8_t node_id)
   {
     uint8_t len = sizeof(SerialReplyPacket);
     SerialReplyPacket *reply = (SerialReplyPacket *)call SerialAMSender.getPayload(&serialMsg, len);
@@ -76,15 +77,18 @@ implementation
       return;
     }
     reply->error = error;
+    reply->nodeid=node_id;
     call SerialAMSender.send(AM_BROADCAST_ADDR, &serialMsg, len);
   }
 
   event message_t* SerialAMReceiver.receive(message_t* msg, void* payload, uint8_t len)
   {
     SerialReqPacket *request = (SerialReqPacket *)payload;
+    uint8_t node_id=request->imgNum;
     memset(&delugeCmd, 0, sizeof(DelugeCmd));
     call stop();
     delugeCmd.type = request->cmd;
+
     // Converts the image number that the user wants to the real image number
     request->imgNum = imgNum2volumeId(request->imgNum);
 
@@ -92,7 +96,7 @@ implementation
     case DELUGE_CMD_STOP:
       call DisseminationUpdate.change(&delugeCmd);
     case DELUGE_CMD_LOCAL_STOP:
-      sendReply(SUCCESS);
+      sendReply(SUCCESS,0);
       call Resource.release();
       break;
     case DELUGE_CMD_ONLY_DISSEMINATE:
@@ -102,18 +106,22 @@ implementation
 	   call Resource.immediateRequest() == SUCCESS)) {
 	call DelugeMetadata.read(request->imgNum);
       } else {
-	sendReply(FAIL);
+	sendReply(FAIL,0);
       }
       break;
     case DELUGE_CMD_REPROGRAM:
     case DELUGE_CMD_REBOOT:
       if (request->imgNum == NON_DELUGE_VOLUME) {
-	sendReply(FAIL);
+	sendReply(FAIL,0);
 	break;
       }
       delugeCmd.imgNum = request->imgNum;
       call DelayTimer.startOneShot(1024);
-      sendReply(SUCCESS);
+      sendReply(SUCCESS,0);
+      break;
+    case DELUGE_CMD_PINGREMOTE:
+      call ObjectTransfer.pingremote(node_id);
+      //sendReply(SUCCESS);
       break;
     }
     return msg;
@@ -134,7 +142,7 @@ implementation
   event void DelugeMetadata.readDone(uint8_t imgNum, DelugeIdent* ident, error_t error)
   {
     delugeCmd.imgNum = imgNum;
-    sendReply(error);
+    sendReply(error,0);
     if (error != SUCCESS) {
       return;
     }
@@ -142,7 +150,7 @@ implementation
     case DELUGE_CMD_ONLY_DISSEMINATE:
     case DELUGE_CMD_DISSEMINATE_AND_REPROGRAM:
       delugeCmd.uidhash = ident->uidhash;
-      delugeCmd.size = ident->size;
+      delugeCmd.size = ident->size;      
       call DisseminationUpdate.change(&delugeCmd);
       call ObjectTransfer.publish(delugeCmd.uidhash, delugeCmd.size, delugeCmd.imgNum);
       break;
@@ -151,6 +159,9 @@ implementation
 
   event void Resource.granted() {}
   event void ObjectTransfer.receiveDone(error_t error) {}
+  event void ObjectTransfer.pingreply(uint8_t node_id){
+  	sendReply(SUCCESS,node_id);
+  }
   event void SerialAMSender.sendDone(message_t* msg, error_t error) {}
   event void DelugeVolumeManager.eraseDone(uint8_t imgNum) {}
 }

@@ -1,5 +1,6 @@
 #!@pathpython@
 
+# Copyright (c) 2014 SymbIoT Systems.
 # Copyright (c) 2007 Johns Hopkins University.
 # All rights reserved.
 #
@@ -32,6 +33,9 @@
 
 # @author Razvan Musaloiu-E. <razvanm@cs.jhu.edu>
 # @author Chieh-Jan Mike Liang <cliang4@cs.jhu.edu>
+# @author Mayank Joneja <mayank@symbiotsystems.com> 
+# @author Laksh Bhatia <laksh@symbiotsystems.com>
+# @date September 2014
 
 import sys, stat, struct, subprocess, time, os.path
 from tinyos import tos
@@ -44,6 +48,7 @@ PATH_PY_BUILD_IMAGE  = os.path.join(os.path.dirname(sys.argv[0]), 'tos-build-del
 FM_AMID = 0x53
 DM_AMID = 0x54
 SERIAL_DATA_LENGTH = 28 - (1+1+4+2)  # See definition of FMReqPacket below
+SERIAL_AMID=2
 
 # Commands for FlashManager
 FM_CMD_ERASE     = 0
@@ -61,6 +66,7 @@ DM_CMD_ONLY_DISSEMINATE = 3
 DM_CMD_DISSEMINATE_AND_REPROGRAM = 4
 DM_CMD_REPROGRAM        = 5
 DM_CMD_BOOT             = 6
+DM_CMD_PINGREMOTE       = 7
 
 ERROR_SUCCESS = 0   # T2-compatible
 ERROR_FAIL    = 1   # T2-compatible
@@ -92,6 +98,13 @@ class SerialReplyPacket(tos.Packet):
        tos.Packet.__init__(self,
                            [('error', 'int',  1),
                             ('data',  'blob', None)],
+                           packet)
+
+class SerialRadioPacket(tos.Packet):
+   def __init__(self, packet = None):
+       tos.Packet.__init__(self,
+                           [('radiostate', 'int',1),
+                            ('radio', 'int',  1)],
                            packet)
 
 class Ident(tos.Packet):
@@ -385,6 +398,16 @@ def localstop():
     success = am.write(sreqpkt, DM_AMID)
     return handleResponse(success, "ERROR: Unable to initiate the local stop")
 
+def pingremote(node_id):
+    sreqpkt = DMReqPacket((DM_CMD_PINGREMOTE, node_id))
+    success = am.write(sreqpkt, DM_AMID)
+    return handleResponse(success, "ERROR: Unable to initiate remote ping")
+
+def stopradio(state):
+    sreqpkt = SerialRadioPacket((state,0))
+    success = am.write(sreqpkt, SERIAL_AMID)
+    return handleResponse(success, "ERROR: Unable to change radio state")    
+
 def print_usage():
     print "Usage: %s <source> <-p|-i|-r|-d|-e|-s> image_number [options]" % sys.argv[0]
     print "  <source> can be:"
@@ -400,6 +423,9 @@ def print_usage():
     print "  -dr --disseminate-and-reprogram"
     print "  -s --stop        Stop the dissemination "
     print "  -ls --local-stop Stop the dissemination only on the local mote"
+    print "  -pr --pingremote Ping a remote node to see if the mote is alive"
+    print "  -l  --listen     Listen to output of Sniffer"
+    print "  -sr --stopradio  Tool to stop and start radio (0=stop, 1=start)"
 
 #     print "  -b --reprogram_bs\n     Reprogram only the directly-connected mote"
 #     print "  -s --reset\n     Reset the versioning information for a given image"
@@ -413,6 +439,10 @@ def checkImgNum():
         print "ERROR: Image number is not valid"
         sys.exit(-1)
     return imgNum
+
+def listen():
+    p=am.read()
+    return p
 
 # ======== MAIN ======== #
 if len(sys.argv) >= 3:
@@ -459,6 +489,21 @@ if len(sys.argv) >= 3:
     elif sys.argv[2] in ["-ls", "--local-stop"]:
         if localstop():
             print "Command sent"
+    elif sys.argv[2] in ["-pr","--pingremote"]:
+        if pingremote(int(sys.argv[3])):
+            print "Command sent"
+    elif sys.argv[2] in ["-l","--listen"]:
+        try:
+            while True:
+                data=listen()
+                print data
+        except KeyboardInterrupt:
+            print "\nExiting"
+            sys.exit(0)
+
+    elif sys.argv[2] in ["-sr","--stopradio"]:
+        if stopradio(int(sys.argv[3])):
+            print "Changed"
     else:
         print_usage()
 
@@ -466,4 +511,3 @@ else:
     print_usage()
 
 sys.exit()
-

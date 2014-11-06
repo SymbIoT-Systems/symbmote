@@ -63,10 +63,15 @@ implementation
              new AMSenderC(AM_DELUGEREQMSG) as SendReqMsg, 
              new AMReceiverC(AM_DELUGEREQMSG) as ReceiveReqMsg,
              new AMSenderC(AM_DELUGEDATAMSG) as SendDataMsg, 
-             new AMReceiverC(AM_DELUGEDATAMSG) as ReceiveDataMsg;
+             new AMReceiverC(AM_DELUGEDATAMSG) as ReceiveDataMsg,
+             new AMSenderC(AM_DELUGEDONEMSG) as SendDoneMsg,
+             new AMReceiverC(AM_DELUGEDONEMSG) as ReceiveDoneMsg;
   
   ObjectTransferP.SendAdvMsg -> SendAdvMsg;
   ObjectTransferP.ReceiveAdvMsg -> ReceiveAdvMsg;
+  ObjectTransferP.SendDoneMsg->SendDoneMsg;
+  ObjectTransferP.ReceiveDoneMsg->ReceiveDoneMsg;
+  ObjectTransferP.Leds = Leds;
   DelugePageTransferC.SendReqMsg -> SendReqMsg;
   DelugePageTransferC.ReceiveReqMsg -> ReceiveReqMsg;
   DelugePageTransferC.SendDataMsg -> SendDataMsg;

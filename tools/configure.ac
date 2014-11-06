@@ -272,6 +272,7 @@ AC_OUTPUT(
 	tinyos/misc/tos-dump.py
 	tinyos/misc/tos-nwprog
 	tinyos/misc/tos-deluge
+	tinyos/misc/sym-deluge
 	tinyos/misc/tos-build-deluge-image
 	tinyos/misc/tos-mote-key
 	tinyos/misc/tos-check-env

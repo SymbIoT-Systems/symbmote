@@ -39,5 +39,8 @@ configuration BasestationAppC {}
 implementation
 {
   components DelugeC;
+  components LedsC;
+
+  DelugeC.Leds->LedsC;
 }
 

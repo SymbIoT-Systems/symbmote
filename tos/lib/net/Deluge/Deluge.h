@@ -66,6 +66,7 @@ enum {
   DELUGE_CMD_DISSEMINATE_AND_REPROGRAM = 4,
   DELUGE_CMD_REPROGRAM = 5, // Reprogram the local mote
   DELUGE_CMD_REBOOT = 6,    // Reboot the local mode
+  DELUGE_CMD_PINGREMOTE = 7,
 };
 
 #define UQ_DELUGE_METADATA "DelugeMetadata.client"

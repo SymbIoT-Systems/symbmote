@@ -75,4 +75,10 @@ typedef nx_struct DelugeDataMsg {
   nx_uint8_t     data[DELUGET2_PKT_PAYLOAD_SIZE];
 } DelugeDataMsg;
 
+typedef nx_struct DelugeDoneMsg {
+  nx_uint16_t sourceAddr;
+  nx_uint16_t request;
+  nx_uint8_t imgNum;
+} DelugeDoneMsg;
+
 #endif
