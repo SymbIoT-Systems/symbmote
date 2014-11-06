@@ -78,7 +78,7 @@ typedef nx_struct DelugeDataMsg {
 typedef nx_struct DelugeDoneMsg {
   nx_uint16_t sourceAddr;
   nx_uint16_t request;
-  nx_uint8_t imgNum;
+  nx_uint16_t battery;
 } DelugeDoneMsg;
 
 #endif

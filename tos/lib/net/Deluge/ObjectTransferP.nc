@@ -61,7 +61,8 @@ module ObjectTransferP
 
     interface AMSend as SendDoneMsg;
     interface Receive as ReceiveDoneMsg;
-
+    interface Read<uint16_t> as Voltage;
+    interface ReprogramGuard;
   }
 }
 
@@ -160,7 +161,7 @@ implementation
     }
   }
   
-  void pingremotel(uint8_t node_id,uint8_t req){
+  void pingremotel(uint8_t node_id,uint8_t req,uint16_t battery){
       DelugeDoneMsg *trfMsg = (DelugeDoneMsg*)(call SendDoneMsg.getPayload(&trfMsgBuf, sizeof(DelugeDoneMsg)));
       
 
@@ -169,7 +170,7 @@ implementation
       }
       trfMsg->sourceAddr = TOS_NODE_ID;
       trfMsg->request = req;
-      trfMsg->imgNum = 0;
+      trfMsg->battery=battery;
       
       if (call SendDoneMsg.send(node_id, &trfMsgBuf, sizeof(DelugeDoneMsg)) == SUCCESS) {
         
@@ -177,9 +178,13 @@ implementation
   }
 
   command error_t ObjectTransfer.pingremote(uint8_t node_id){
-    pingremotel(node_id,10);
+    pingremotel(node_id,10,0);
   }
 
+  event void Voltage.readDone(error_t result, uint16_t val){
+    pingremotel(nodeid,11,val);
+  }
+  
   /**
    * Starts publisher
    */
@@ -282,20 +287,6 @@ implementation
   event void BlockWrite.syncDone[uint8_t img_num](error_t error)
   {
     if (state == S_SYNC) {
-      DelugeDoneMsg *trfMsg = (DelugeDoneMsg*)(call SendDoneMsg.getPayload(&trfMsgBuf, sizeof(DelugeDoneMsg)));
-      
-
-      if (trfMsg == NULL) {
-        return;
-      }
-      trfMsg->sourceAddr = TOS_NODE_ID;
-      trfMsg->request = 0;
-      trfMsg->imgNum = img_num;
-      
-      if (call SendDoneMsg.send(AM_BROADCAST_ADDR, &trfMsgBuf, sizeof(DelugeDoneMsg)) == SUCCESS) {
-
-      }
-
       post signalObjRecvDone();
     }
   }
@@ -387,16 +378,33 @@ implementation
     signal ObjectTransfer.pingreply(nodeid);
   }
 
+  event void ReprogramGuard.okToProgramDone(bool ok){
+    DelugeDoneMsg *trfMsg = (DelugeDoneMsg*)(call SendDoneMsg.getPayload(&trfMsgBuf, sizeof(DelugeDoneMsg)));
+    if(!ok){
+      return;
+    }
+      if (trfMsg == NULL) {
+        return;
+      }
+      trfMsg->sourceAddr = TOS_NODE_ID;
+      trfMsg->request = 0;
+      trfMsg->battery=0;
+      
+      if (call SendDoneMsg.send(AM_BROADCAST_ADDR, &trfMsgBuf, sizeof(DelugeDoneMsg)) == SUCCESS) {
+
+      }
+  }
+
   event message_t* ReceiveDoneMsg.receive(message_t* msg, void* payload, uint8_t len){
     DelugeDoneMsg *trfMsg = (DelugeDoneMsg*)payload;
     nodeid=trfMsg->sourceAddr;
-    if(trfMsg->request==10){
-      pingremotel(1,11);
+    if(trfMsg->request==10){//10 is what basestation sends to nodes
+      call Voltage.read();
     }else if(trfMsg->request==11){
-      //send to print for ping reply
+      //send to print for ping reply...this is reply from node to basestation
       post pingreplyfunc();
     }else if(trfMsg->request==0){
-      //Basestation received reply for completing the transfer...stop transfer now
+      //Basestation received reply for completing the transfer...stop transfer now..this one is ack
       post pingreplyfunc();
     }
     return msg;

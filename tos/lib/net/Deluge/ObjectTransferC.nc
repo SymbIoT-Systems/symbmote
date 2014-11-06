@@ -65,7 +65,8 @@ implementation
              new AMSenderC(AM_DELUGEDATAMSG) as SendDataMsg, 
              new AMReceiverC(AM_DELUGEDATAMSG) as ReceiveDataMsg,
              new AMSenderC(AM_DELUGEDONEMSG) as SendDoneMsg,
-             new AMReceiverC(AM_DELUGEDONEMSG) as ReceiveDoneMsg;
+             new AMReceiverC(AM_DELUGEDONEMSG) as ReceiveDoneMsg,
+             new VoltageC();
   
   ObjectTransferP.SendAdvMsg -> SendAdvMsg;
   ObjectTransferP.ReceiveAdvMsg -> ReceiveAdvMsg;
@@ -77,10 +78,10 @@ implementation
   DelugePageTransferC.SendDataMsg -> SendDataMsg;
   DelugePageTransferC.ReceiveDataMsg -> ReceiveDataMsg;
   DelugePageTransferC.AMPacket -> SendDataMsg;
+  ObjectTransferP.Voltage -> VoltageC;
   DelugePageTransferC.Leds = Leds;
-  
   ObjectTransferP.BlockWrite = BlockWrite;
-  
+
   components RandomC, new TimerMilliC() as Timer;
   ObjectTransferP.Random -> RandomC;
   ObjectTransferP.Timer -> Timer;
