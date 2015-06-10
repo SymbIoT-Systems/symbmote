@@ -48,7 +48,7 @@ module UDPShellP {
     interface Leds;
     
     interface ICMPPing;
-#if defined(PLATFORM_TELOSB) || defined(PLATFORM_EPIC) || defined(PLATFORM_Z1)
+#if defined(PLATFORM_TELOSB) || defined(PLATFORM_EPIC) || defined(PLATFORM_Z1) || defined(PLATFORM_SYMBMOTE)
     interface Counter<TMilli, uint32_t> as Uptime;
 #endif
 
@@ -94,7 +94,7 @@ module UDPShellP {
     int i;
     atomic {
       uptime = 0;
-#if defined(PLATFORM_TELOSB) || defined(PLATFORM_EPIC) || defined(PLATFORM_Z1)
+#if defined(PLATFORM_TELOSB) || defined(PLATFORM_EPIC) || defined(PLATFORM_Z1) || defined(PLATFORM_SYMBMOTE)
       boot_time = call Uptime.get();
 #endif
     }
@@ -187,7 +187,7 @@ module UDPShellP {
 
 
   void action_uptime(int argc, char **argv) {
-#if defined(PLATFORM_TELOSB) || defined(PLATFORM_EPIC) || defined(PLATFORM_Z1)
+#if defined(PLATFORM_TELOSB) || defined(PLATFORM_EPIC) || defined(PLATFORM_Z1) || defined(PLATFORM_SYMBMOTE)
     int len;
     uint64_t tval = call Uptime.get();
     atomic
@@ -289,7 +289,7 @@ module UDPShellP {
     call UDP.sendto(&session_endpoint, reply_buf, len);
   }
 
-#if  defined(PLATFORM_TELOSB) || defined(PLATFORM_EPIC) || defined(PLATFORM_Z1)
+#if  defined(PLATFORM_TELOSB) || defined(PLATFORM_EPIC) || defined(PLATFORM_Z1) || defined(PLATFORM_SYMBMOTE)
   async event void Uptime.overflow() {
     atomic
       uptime += 0xffffffff;

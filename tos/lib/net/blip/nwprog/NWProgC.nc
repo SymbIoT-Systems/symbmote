@@ -45,7 +45,7 @@ configuration NWProgC {
   components new DelugeMetadataClientC();
   NWProgP.DelugeMetadata -> DelugeMetadataClientC;
 
-#if defined(PLATFORM_TELOSB)
+#if defined(PLATFORM_TELOSB) || defined(PLATFORM_SYMBMOTE)
   NWProgP.StorageMap[VOLUME_GOLDENIMAGE] -> BlockDeluge0;
   NWProgP.StorageMap[VOLUME_DELUGE1]     -> BlockDeluge1;
 #elif defined(PLATFORM_MICAZ) || defined(PLATFORM_IRIS) || defined(PLATFORM_EPIC) || defined(PLATFORM_MULLE)

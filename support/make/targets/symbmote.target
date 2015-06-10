@@ -1,0 +1,19 @@
+#-*-Makefile-*- vim:syntax=make
+#
+# The symbmote platform is based on the MSP430F5438A
+#
+# This platform provides basic support for the 
+#
+# You should be using the 5438a and cc2520 radio.
+#
+
+TARGET = symbmote
+PFLAGS += -I$(TINYOS_OS_DIR)/system/panic_simple
+
+$(call TOSMake_include_platform,symbmote)
+
+
+$(call TOSMake_include_make_platform,msp)
+
+symbmote: $(BUILD_DEPS)
+        @:

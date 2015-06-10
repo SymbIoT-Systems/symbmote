@@ -63,6 +63,7 @@ module RadioCountToLedsC @safe() {
     interface Timer<TMilli> as MilliTimer;
     interface SplitControl as AMControl;
     interface Packet;
+    interface PacketLink;
   }
 }
 implementation {
@@ -78,7 +79,9 @@ implementation {
 
   event void AMControl.startDone(error_t err) {
     if (err == SUCCESS) {
-      call MilliTimer.startPeriodic(250);
+      if(TOS_NODE_ID == 8){
+      call MilliTimer.startOneShot(1000);
+    }
     }
     else {
       call AMControl.start();
@@ -102,7 +105,11 @@ implementation {
       }
 
       rcm->counter = counter;
+      //call PacketLink.setRetries(&packet,10);
+      //call PacketLink.setRetryDelay(&packet,500);
+      
       if (call AMSend.send(AM_BROADCAST_ADDR, &packet, sizeof(radio_count_msg_t)) == SUCCESS) {
+        call Leds.led0On();
 	dbg("RadioCountToLedsC", "RadioCountToLedsC: packet sent.\n", counter);	
 	locked = TRUE;
       }
@@ -138,9 +145,13 @@ implementation {
   }
 
   event void AMSend.sendDone(message_t* bufPtr, error_t error) {
+    call Leds.led0Off();
     if (&packet == bufPtr) {
       locked = FALSE;
     }
+    /*if (call PacketLink.wasDelivered(&packet) == TRUE){
+      call Leds.led2On();
+    }*/
   }
 
 }

@@ -232,8 +232,8 @@ AC_OUTPUT(
 	platforms/ucmote/mcp2200gpio/Makefile
 	platforms/ucmote/motelist2/Makefile
 	platforms/ucmote/motelist2/motelist2
-	platforms/ucmote/motelist2/motelist2_getdevices-cygwin.py
-	platforms/ucmote/motelist2/motelist2_getdevices-linux.py
+	platforms/ucmote/motelist2/tosdevicesearch-cygwin.py
+	platforms/ucmote/motelist2/tosdevicesearch-linux.py
 	tinyos/Makefile
 	tinyos/c/Makefile
 	tinyos/c/blip/Makefile
@@ -290,7 +290,6 @@ AC_OUTPUT(
 	tinyos/python/misc/Makefile
 	tinyos/python/packet/Makefile
 	tinyos/python/tossim/Makefile
-	tinyos/python/utils/Makefile
 	tinyos/safe/Makefile
 	tinyos/safe/tos-decode-flid
 	tinyos/safe/tos-ramsize

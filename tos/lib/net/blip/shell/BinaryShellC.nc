@@ -37,7 +37,7 @@ configuration BinaryShellC {
   components ICMPPingC;
   BinaryShellP.ICMPPing -> ICMPPingC.ICMPPing[unique("PING")];
 
-#if defined(PLATFORM_TELOSB) || defined(PLATFORM_EPIC)
+#if defined(PLATFORM_TELOSB) || defined(PLATFORM_EPIC) || defined(PLATFORM_SYMBMOTE)
   components CounterMilli32C;
   BinaryShellP.Uptime -> CounterMilli32C;
 #endif
