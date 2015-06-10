@@ -68,9 +68,14 @@ endif
 #  Allow users to specify additional directories to find .target, .extra, and
 #  .rules files. This allows for platforms to be stored in separate repositories
 #  and still compile against the main TinyOS code.
+#
 #  To use this feature, set the environment variable TINYOS_ROOT_DIR_ADDITIONAL
-#  to a space separated list of additional paths to make folders you would
+#  to a space or colon separated list of additional paths to make folders you would
 #  like the make system to search.
+#
+#  Make expects space seperated lists, but ':' seperated is easier to read.  We
+#  convert ':' to ' ' below so Make is happy.
+#
 ROOT_DIR_ADDITIONAL = $(subst :, ,$(TINYOS_ROOT_DIR_ADDITIONAL))
 TOSMAKE_PATH = $(addsuffix /support/make,$(ROOT_DIR_ADDITIONAL))
 TOSMAKE_PATH += $(TINYOS_MAKE_DIR)
@@ -326,20 +331,31 @@ endif
 delsetid: program FORCE
 	rm -f $(subst .$(TOSMAKE_BINARY_FORMAT).,.exe.,$(TOSMAKE_BINARY_OUT)) $(TOSMAKE_BINARY_OUT)
 
-ihex: bytes FORCE
+ihex: bytes sym lst FORCE
 	@echo -e '$(INFO_STRING) creating ihex file'
 	@$(OBJCOPY) --output-target=ihex $(MAIN_EXE) $(MAIN_IHEX)
 
-srec: bytes FORCE
+srec: bytes sym lst FORCE
 	@echo -e '$(INFO_STRING) creating srec file'
 	@$(OBJCOPY) --output-target=srec $(MAIN_EXE) $(MAIN_SREC)
 
-bin: bytes FORCE
+bin: bytes sym lst FORCE
 	@echo -e '$(INFO_STRING) creating bin file'
 	@$(OBJCOPY) --output-target=binary $(MAIN_EXE) $(MAIN_BIN)
 
 bytes: exe FORCE
+	@echo -e '$(INFO_STRING) script'
 	@$(OBJDUMP) -h $(MAIN_EXE) | perl -ne '$$b{$$1}=hex $$2 if /^\s*\d+\s*\.(text|data|bss)\s+(\S+)/; END { printf("%16d bytes in ROM\n%16d bytes in RAM\n",$$b{text}+$$b{data},$$b{data}+$$b{bss}); }'
+	@echo -e '$(INFO_STRING) size (toolchain):'
+	@$(SIZE) $(MAIN_EXE)
+
+lst: exe FORCE
+	@echo -e '$(INFO_STRING) generating listing'
+	@$(OBJDUMP) -d --source -w $(MAIN_EXE) > $(MAIN_LST)
+
+sym: exe FORCE
+	@echo -e '$(INFO_STRING) generating symbol table'
+	@$(NM) -an $(MAIN_EXE) > $(MAIN_SYM)
 
 ifeq ($(NO_WIRING_CHECK),)
 wiring_check: exe FORCE
@@ -351,7 +367,7 @@ endif
 
 exe: $(TOSMAKE_PRE_EXE_DEPS) $(COMPONENT).nc build_dir build_storage ident_cache FORCE
 	@echo -e '$(INFO_STRING) compiling $(COMPONENT) to a $(TARGET) binary'
-	$(NESC) -o $(MAIN_EXE) $(SAFE_FLAGS) $(OPTFLAGS) $(NESC_PFLAGS) $(CFLAGS) $(WIRING_CHECK_FLAGS) $(COMPONENT).nc $(LIBS) $(LDFLAGS) $(TOSMAKE_ADDITIONAL_INPUTS)
+	$(NESC) -o $(MAIN_EXE) $(TOSMAKE_FIRST_FLAGS) $(SAFE_FLAGS) $(OPTFLAGS) $(NESC_PFLAGS) $(CFLAGS) $(WIRING_CHECK_FLAGS) $(COMPONENT).nc $(LIBS) $(LDFLAGS) $(TOSMAKE_ADDITIONAL_INPUTS)
 
 ident_cache: build_dir FORCE
 	@echo '$(IDENT_FLAGS)' > $(TOSMAKE_BUILD_DIR)/ident_flags.txt

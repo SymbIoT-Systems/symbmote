@@ -31,6 +31,7 @@ uint16_t TOS_NODE_ID = 1;
 /* This macro is used to mark pointers that represent ownership
    transfer in interfaces. See TEP 3 for more discussion. */
 #define PASS
+#define UQ_PANIC_SUBSYS "Panic.Subsys"
 
 #ifdef NESC
 struct @atmostonce { };

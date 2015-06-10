@@ -1,6 +1,7 @@
 //$Id: Msp430Timer.h,v 1.5 2010-06-29 22:07:45 scipio Exp $
 
-/* Copyright (c) 2000-2003 The Regents of the University of California.
+/* Copyright (c) 2014 Laksh Bhatia
+ * Copyright (c) 2000-2003 The Regents of the University of California.
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -37,6 +38,14 @@
 #define _H_Msp430Timer_h
 
 enum {
+
+  MSP430TIMER_CCI_A      = 0,
+  MSP430TIMER_CCI_B      = 1,
+  MSP430TIMER_CCI_GND    = 2,
+  MSP430TIMER_CCI_VCC    = 3,
+
+
+
   MSP430TIMER_CM_NONE = 0,
   MSP430TIMER_CM_RISING = 1,
   MSP430TIMER_CM_FALLING = 2,
